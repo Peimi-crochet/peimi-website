@@ -376,6 +376,49 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 .modal-title{font-family:'Playfair Display',serif;font-size:32px;color:#2C1F12;margin-bottom:10px;}
 .modal-sub{font-size:13px;color:#8C7A68;line-height:1.7;margin-bottom:24px;}
 .modal input{width:100%;padding:13px 16px;border:1px solid var(--border);font-family:'Inter',sans-serif;font-size:13px;margin-bottom:12px;outline:none;background:#F5EFE6;}
+
+/* ===== RESPONSIVE ===== */
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;}
+
+@media (max-width: 1024px) {
+  #nav{padding:0 30px;}
+  .section{padding:80px 30px;}
+  .products-section{padding:80px 30px;}
+  .trust-bar{padding:56px 30px;}
+  footer{padding:72px 30px 36px;}
+}
+
+@media (max-width: 768px) {
+  .nav-toggle{display:block;}
+  .nav-menu{
+    position:fixed;top:68px;left:0;right:0;bottom:0;
+    background:#120e08;flex-direction:column;
+    padding:40px 30px;gap:24px;
+    transform:translateX(100%);transition:transform .3s ease;
+  }
+  .nav-menu.show{transform:translateX(0);}
+  .nav-menu a{font-size:14px;color:var(--white);}
+  
+  .hero-h1{font-size:48px;letter-spacing:-1px;}
+  .hero-left{padding:80px 30px;}
+  
+  .trust-inner{grid-template-columns:repeat(2,1fr);gap:24px;}
+  .trust-item{border-right:none;text-align:left;}
+  
+  .products-header{flex-direction:column;align-items:flex-start;gap:20px;}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:15px;}
+  .prod-name{font-size:12px;}
+  
+  .story-grid{grid-template-columns:1fr;gap:40px;}
+  .process-grid{grid-template-columns:1fr;gap:40px;}
+  .footer-grid{grid-template-columns:1fr;gap:40px;}
+}
+
+@media (max-width: 480px) {
+  .hero-h1{font-size:38px;}
+  .products-grid{grid-template-columns:1fr;}
+  .trust-inner{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -383,7 +426,8 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="logo">PEI<em>MI</em></a>
-  <ul class="nav-menu">
+  <button class="nav-toggle" id="navToggle">&#9776;</button>
+  <ul class="nav-menu" id="navMenu">
     <li><a href="#products">Products</a></li>
     <li><a href="#story">Our Story</a></li>
     <li><a href="#process">Process</a></li>
@@ -773,6 +817,20 @@ footer{background:var(--dark);padding:72px 60px 36px;}
   </div>
 </section>
 
+<!-- INSIGHTS -->
+<section class="insights-section" id="insights" style="padding:80px 60px;background:#fff;">
+  <div class="section-inner" style="max-width:1240px;margin:0 auto;">
+    <div class="section-tag">Expert Insights</div>
+    <h2 class="section-title">Industry Perspective &amp; Trends</h2>
+    <div id="weekly-insight-content" style="margin-top:40px;line-height:1.8;color:#555;">
+      <article>
+        <h3 style="color:#120E08;margin-bottom:15px;">2026 Crochet Trend Forecast: Emotional Value &amp; Sustainable Craft</h3>
+        <p>As the global market shifts towards "Slow Fashion," handmade crochet products are seeing a 35% increase in search interest. At PEIMI, we are seeing a specific surge in demand for 'Amigurumi' styles that provide emotional comfort. Our latest production cycle focuses on organic cotton yarns and bio-degradable fibers to meet the growing eco-conscious requirements of US and European retailers.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="contact-grid">
@@ -956,9 +1014,23 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
   curVid=(curVid+1)%videoSrcs.length;
   switchVid(curVid);
 });
+
+// Mobile Nav Toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+if(navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    navToggle.innerHTML = navMenu.classList.contains('show') ? '&times;' : '&#9776;';
+  });
+  // Close menu when clicking links
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      navToggle.innerHTML = '&#9776;';
+    });
+  });
+}
 </script>
-</body>
-</html>
->
 </body>
 </html>
