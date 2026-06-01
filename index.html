@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -548,7 +548,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/Hcd32b0a96164408a857c7d6106d303caa.png" alt="Handmade Knit Bag Wholesale - PEIMI Crochet Factory" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/Hcd32b0a96164408a857c7d6106d303caa.png" alt="Hollow Crochet Bag Factory - Handmade Knit Tote Wholesale" loading="lazy"/></div>
           <div class="prod-body">
             <div>
               <div class="prod-name">Crochet Tote Bag</div>
@@ -940,6 +940,10 @@ footer{background:var(--dark);padding:72px 60px 36px;}
         <div class="faq-q">Are the dimensions consistent across all units?</div>
         <div class="faq-a">Since these are 100% handmade, slight variations (±1-2cm) are normal. Each piece is unique but follows strict quality control.</div>
       </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you operate as a hollow crochet bag factory?</div>
+        <div class="faq-a">Yes, PEIMI operates as a specialized hollow crochet bag factory. We offer extensive custom weaving patterns and large-scale manufacturing for hollow-style totes and accessories.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1035,6 +1039,22 @@ const navMenu = document.getElementById('navMenu');
 if(navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('show');
+    navToggle.innerHTML = navMenu.classList.contains('show') ? '&times;' : '&#9776;';
+  });
+  // Close menu when clicking links
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      navToggle.innerHTML = '&#9776;';
+    });
+  });
+}
+</script>
+</body>
+</html>
+
+</html>
+le('show');
     navToggle.innerHTML = navMenu.classList.contains('show') ? '&times;' : '&#9776;';
   });
   // Close menu when clicking links
