@@ -278,6 +278,21 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .section-title{color:#2C1F12;font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;color:#2C1F12;}
 .section-sub{font-size:14px;color:#8C7A68;margin-top:16px;line-height:1.8;max-width:520px;}
 
+/* ===== FEATURED CATEGORIES ===== */
+.featured-categories{padding:80px 60px;background:var(--white);}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1240px;margin:0 auto;}
+.cat-card{
+  position:relative;aspect-ratio:4/5;overflow:hidden;background:#f5f2ee;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-decoration:none;transition:all .4s ease;border:1px solid var(--border);
+}
+.cat-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.05);border-color:var(--gold);}
+.cat-img{width:100%;height:70%;display:flex;align-items:center;justify-content:center;padding:40px;}
+.cat-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .6s ease;}
+.cat-card:hover .cat-img img{transform:scale(1.1);}
+.cat-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--dark);margin-top:10px;text-align:center;}
+.cat-subtitle{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:8px;}
+
 /* ===== TRUST BAR ===== */
 .trust-bar{background:var(--dark);padding:56px 60px;}
 .trust-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
@@ -558,6 +573,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
         <li><a href="bags.html">Crochet Bags</a></li>
         <li><a href="bouquets.html">Handmade Bouquets</a></li>
         <li><a href="accessories.html">Amigurumi & Accessories</a></li>
+        <li><a href="christmas.html" style="color:var(--gold);">Christmas Specials</a></li>
         <li><a href="#products">View All PRODUCTS</a></li>
       </ul>
     </li>
@@ -601,6 +617,31 @@ footer{background:var(--dark);padding:72px 60px 36px;}
   </div>
 </div>
 
+<!-- FEATURED CATEGORIES -->
+<section class="featured-categories" id="featured-categories">
+  <div class="section-inner">
+    <div class="section-label" style="text-align:center;">Our Expertise</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:60px;">Shop by Category</h2>
+    <div class="cat-grid">
+      <a href="bags.html" class="cat-card">
+        <div class="cat-img"><img src="https://sc02.alicdn.com/kf/H7561fdf9559c4021966a3d905953047aM.png" alt="Handmade Crochet Bags"/></div>
+        <div class="cat-title">Handmade Bags</div>
+        <div class="cat-subtitle">Wholesale Totes & Clutches</div>
+      </a>
+      <a href="accessories.html" class="cat-card">
+        <div class="cat-img"><img src="https://sc02.alicdn.com/kf/A53515f38034941ce9233cdf934e224eaL.png" alt="Custom Amigurumi Dolls"/></div>
+        <div class="cat-title">Custom Amigurumi</div>
+        <div class="cat-subtitle">OEM Plush & Keychains</div>
+      </a>
+      <a href="bouquets.html" class="cat-card">
+        <div class="cat-img"><img src="https://sc02.alicdn.com/kf/A3f41f72f6874425d9ba26e868ee73211U.png" alt="Floral Crochet Bouquets"/></div>
+        <div class="cat-title">Floral Bouquets</div>
+        <div class="cat-subtitle">Everlasting Gift Sets</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- TRUST -->
 <div class="trust-bar">
   <div class="trust-inner">
@@ -639,16 +680,190 @@ footer{background:var(--dark);padding:72px 60px 36px;}
       <div class="prod-group-label">Signature Crochet Bags</div>
       <div class="products-grid">
         <div class="product-card">
-          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H749cc281e3144994b5b1f130194a5e0e6.png" alt="Boho Crochet Granny Square Tote Bag Wholesale - PEIMI Factory" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/H7561fdf9559c4021966a3d905953047aM.png" alt="Signature Hollow Tote"/></div>
           <div class="prod-body">
-            <h3 class="prod-name">Granny Square Tote</h3>
-            <p class="prod-desc">A vibrant masterpiece of rhythmic grace. Each square is handcrafted over 20 hours, offering a nostalgic yet modern boho aesthetic for collections.</p>
+            <h3 class="prod-name">Signature Hollow Tote</h3>
+            <p class="prod-desc">A masterpiece of rhythmic grace. This iconic hollow-weave pattern is handcrafted over 30 hours, offering a timeless summer aesthetic.</p>
             <div class="prod-specs">
               <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
               <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
               <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Handmade</span></div>
             </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20Signature%20Hollow%20Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A36e65a7f9273419bb6e282c0dfb39a8f4.png" alt="Artisan Mesh Bag"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Artisan Mesh Shoulder Bag</h3>
+            <p class="prod-desc">Sophisticated mesh structure that offers durability and style. Perfect for sustainable retail collections and eco-conscious shoppers.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knotted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20Mesh%20Shoulder%20Bag" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A0f60742183e84323863777598c2374e2j.png" alt="Daily Crossbody"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Daily Crochet Crossbody</h3>
+            <p class="prod-desc">Compact and full of character. A versatile accessory that brings the warmth of hand-crocheted art to everyday urban use.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Handmade</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20Daily%20Crossbody" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Aa654999f8d9546059ca9e66cb17e8870K.png" alt="Boho Beach Bag"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Boho Summer Beach Bag</h3>
+            <p class="prod-desc">High-capacity weave with a relaxed bohemian aesthetic. Designed to endure sun, sand, and high-volume seasonal retail.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">20-35 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Artisan Woven</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20Boho%20Beach%20Bag" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: AMIGURUMI & KEYCHAINS (UPGRADED WEIGHT) -->
+    <div class="prod-group">
+      <div class="prod-group-label">Amigurumi &amp; Keychains</div>
+      <p style="font-size:12px; color:var(--gold); margin-top:-15px; margin-bottom:25px; letter-spacing:1px; text-transform:uppercase; font-weight:600;">Specializing in OEM Character Customization &amp; IP Plush Development.</p>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A53515f38034941ce9233cdf934e224eaL.png" alt="Premium Handcrafted Amigurumi Dolls Wholesale"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Crochet Doll Keychain</h3>
+            <p class="prod-desc">Premium handcrafted amigurumi dolls. Expertly knitted with vibrant details, these charming characters are top-tier gift choices for nursery and lifestyle retailers.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Knitted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Crochet%20Doll%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Ae2203f36a89c4a6fad0de013cc4a797dy.png" alt="Wholesale Handmade Crochet Animal Keychains Frog Designs"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Frog Prince Keychain</h3>
+            <p class="prod-desc">Wholesale handmade crochet animal keychains. Our signature artisan frog design offers a playful yet sophisticated touch for global retail collections.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Knitted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Frog%20Prince%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Abd2eacc39e004888992f34053985885cF.png" alt="Classic Hand-Knitted Teddy Bear Keychain Wholesale"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Teddy Bear Keychain</h3>
+            <p class="prod-desc">Classic hand-knitted teddy bear charms. Crafted with ultra-soft sustainable yarn, these plush accessories provide an emotional connection for end consumers.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Knitted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Teddy%20Bear%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A34e827d4cdc740ce9aaab7fa2763b71f8.png" alt="Exquisite Artisan Crochet Rabbit Keychain Charms"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Graceful Bunny Keychain</h3>
+            <p class="prod-desc">Exquisite artisan crochet rabbit charms. A symbol of handmade warmth and seasonal joy, meticulously stitched for high-volume B2B sourcing.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Knitted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Graceful%20Bunny%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3: HANDMADE BOUQUETS -->
+    <div class="prod-group">
+      <div class="prod-group-label">Handmade Bouquets</div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A3f41f72f6874425d9ba26e868ee73211U.png" alt="Handmade Crochet Lily Lavender Flower Bouquet Wholesale"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Lily & Lavender Bouquet</h3>
+            <p class="prod-desc">An elegant arrangement symbolizing purity and calm. Each stem is meticulously crocheted to capture the delicate form of real flora in an everlasting medium.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">40h Handwork</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Lily%20Lavender%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A72cbae601f0a4aa5aab77c9f482860a3l.png" alt="Wholesale Crochet Mixed Flower Bouquet Handmade"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Mixed Flower Bouquet</h3>
+            <p class="prod-desc">A vibrant symphony of handcrafted flora. Expertly knitted to capture the essence of spring, this best-selling mixed bouquet is perfect for sustainable event gifting.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Artisan Woven</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Mixed%20Flower%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H471b099d8b3c4b63b2b13854adadf662E.jpg" alt="Wholesale Crochet Sunflower Bouquet Factory Direct"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Sunflower Bouquet</h3>
+            <p class="prod-desc">Radiant sun-kissed stitches that never fade. Our signature handmade sunflowers symbolize loyalty and warmth, making them a top choice for B2B inventory.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Sunflower%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Aabdb61adb96d4ab2b8bfc225ff1da2b8h.png" alt="Mixed Crochet Flower Bouquet Bulk Order"/></div>
+          <div class="prod-body">
+            <h3 class="prod-name">Mixed Crochet Bouquet</h3>
+            <p class="prod-desc">The ultimate showcase of artisan skill. A diverse collection of crochet blossoms designed for high-end retail displays and eco-conscious floral arrangements.</p>
+            <div class="prod-specs">
+              <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+              <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+              <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Milk Cotton</span></div>
+              <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Knitted</span></div>
+            </div>
+            <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Mixed%20Crochet%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
             <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Granny%20Square%20Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
           </div>
         </div>
@@ -1041,15 +1256,14 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="form-group">
-          <label>Product Category</label>
-          <select name="product">
-            <option value="">Select a category</option>
-            <option>Crochet Bags</option>
-            <option>Flower Bouquets</option>
-            <option>Crochet Dolls</option>
-            <option>Home Decor / Coasters</option>
-            <option>Keychains</option>
-            <option>Multiple Categories</option>
+          <label>I'm interested in:</label>
+          <select name="product" required>
+            <option value="">Select Category</option>
+            <option>Handmade Bags</option>
+            <option>Custom Amigurumi / Dolls</option>
+            <option>Floral Bouquets</option>
+            <option>Christmas Specials</option>
+            <option>Multiple Categories / OEM</option>
           </select>
         </div>
         <div class="form-group">
