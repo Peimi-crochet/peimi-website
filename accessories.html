@@ -8,40 +8,75 @@
 <style>
 :root{ --gold:#B08D57; --cream:#F5EFE6; --dark:#120e08; --text:#3D2E22; --white:#FAF6F0; --border:rgba(140,100,60,0.15); }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;padding:0;}
-#nav{ position:fixed;top:0;left:0;right:0;z-index:1000; display:flex;align-items:center;justify-content:space-between; padding:0 60px;height:68px; background:#120e08; }
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+#nav{ position:fixed;top:0;left:0;right:0;z-index:1000; display:flex;align-items:center;justify-content:space-between; padding:0 60px;height:68px; background:var(--dark); border-bottom:1px solid rgba(176,141,87,0.15); }
 .logo{font-size:22px;letter-spacing:3px;font-weight:800;color:var(--white);text-decoration:none;text-transform:uppercase;}
 .logo em{color:var(--gold);font-style:normal;}
 .nav-menu{display:flex;align-items:center;gap:36px;list-style:none;}
-.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;}
+.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;transition:color .2s;}
 .nav-item { position: relative; }
-.dropdown { position: absolute; top: 100%; left: 0; background: #120e08; min-width: 220px; border: 1px solid rgba(176,141,87,0.3); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; list-style: none; padding: 10px 0; z-index: 1001; }
+.dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); min-width: 220px; border: 1px solid rgba(176,141,87,0.3); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; list-style: none; padding: 10px 0; z-index: 1001; }
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown li a { padding: 12px 20px; display: block; font-size: 11px; color: rgba(255,255,255,0.7) !important; }
-.nav-menu li a::after { content: "▾"; margin-left: 5px; font-size: 8px; vertical-align: middle; opacity: 0.5; }
+
 .category-hero { padding: 160px 60px 80px; background: var(--dark); color: #fff; text-align: center; }
 .category-hero h1 { font-family: 'Playfair Display', serif; font-size: 56px; color: var(--gold); margin-bottom: 20px; }
 .category-hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 700px; margin: 0 auto; }
-.products-section{background:#F5EFE6;padding:96px 60px;}
-.products-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(420px, 1fr)); gap:20px; width:100%; }
-.product-card{background:#FAF6F0;overflow:hidden;transition:transform .25s;display:flex;flex-direction:column;border:1px solid var(--border);}
-.prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#FAF6F0;}
-.prod-img img{width:100%;height:100%;object-fit:contain;padding:60px;display:block;}
-.prod-body{padding:16px 18px 18px;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--border);}
-.prod-name{font-family:'Playfair Display',serif;font-size:15px;color:#2C1F12;line-height:1.3;}
-.prod-moq{font-size:10px;color:#8C7A68;margin-top:4px;letter-spacing:1px;}
-.prod-link{ width:32px;height:32px;background:var(--dark);color:var(--white); display:flex;align-items:center;justify-content:center;text-decoration:none; }
+
+.products-section{ padding:120px 60px; background:var(--cream); }
+.products-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; width:100%; }
+@media (max-width: 1200px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } }
+
+.product-card{background:#FAF6F0;overflow:hidden;transition:all .35s ease;display:flex;flex-direction:column;border:1px solid var(--border);}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(28,24,18,0.12);}
+.prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#FAF6F0;display:flex;align-items:center;justify-content:center;}
+.prod-img img{
+  width:100%;height:100%;object-fit:contain;
+  padding:5px;
+  mix-blend-mode:multiply;
+  filter:contrast(1.05);
+  display:block;transition:transform .6s ease;
+}
+.product-card:hover .prod-img img{transform:scale(1.08);}
+.prod-body{padding:20px;display:flex;flex-direction:column;flex:1;}
+.prod-name{font-family:'Playfair Display',serif;font-size:18px;color:#2C1F12;line-height:1.2;margin-bottom:12px;}
+.prod-desc{font-size:12px;color:#8C7A68;line-height:1.5;margin-bottom:15px;flex:1;}
+.prod-specs{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  padding:15px 0;border-top:1px solid rgba(140,100,60,0.1);border-bottom:1px solid rgba(140,100,60,0.1);
+  margin-bottom:20px;
+}
+.spec-item{display:flex;flex-direction:column;gap:2px;}
+.spec-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#8C7A68;}
+.spec-value{font-size:11px;font-weight:600;color:#2C1F12;}
+.prod-link{
+  width:100%;height:48px;background:var(--dark);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  transition:all .3s ease;
+}
+.prod-link:hover{background:var(--gold);}
+
 footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color: rgba(255,255,255,0.3); font-size: 12px;}
-@media (max-width: 768px) { #nav { padding: 0 20px; } .nav-menu { display: none; } .products-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <nav id="nav">
   <a href="index.html" class="logo">PEI<em>MI</em></a>
   <ul class="nav-menu">
-    <li class="nav-item"><a href="index.html#products">Products</a><ul class="dropdown"><li><a href="bags.html">Crochet Bags</a></li><li><a href="bouquets.html">Handmade Bouquets</a></li><li><a href="accessories.html">Amigurumi & Accessories</a></li><li><a href="index.html#products">View All</a></li></ul></li>
+    <li><a href="index.html">HOME</a></li>
+    <li class="nav-item">
+      <a href="index.html#products">PRODUCTS</a>
+      <ul class="dropdown">
+        <li><a href="bags.html">Crochet Bags</a></li>
+        <li><a href="bouquets.html">Handmade Bouquets</a></li>
+        <li><a href="accessories.html">Amigurumi & Accessories</a></li>
+        <li><a href="index.html#products">View All</a></li>
+      </ul>
+    </li>
     <li><a href="index.html#story">Our Story</a></li>
-    <li><a href="index.html#contact" style="background:var(--gold); padding:8px 16px; color:#fff;">Get a Quote</a></li>
+    <li><a href="index.html#contact" style="background:var(--gold); padding:8px 16px; color:#fff; font-weight:700; text-decoration:none;">Get a Quote</a></li>
   </ul>
 </nav>
 <section class="category-hero">
@@ -51,43 +86,59 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
 <section class="products-section">
   <div class="products-grid">
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A53515f38034941ce9233cdf934e224eaL.png" alt="Handmade Amigurumi Doll Keychains Wholesale"/></div>
+      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A53515f38034941ce9233cdf934e224eaL.png" alt="Artisan Doll Keychain"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Artisan Doll Keychain</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Artisan Doll Keychain</h3>
+        <p class="prod-desc">Whimsical handcrafted characters full of charm. Each doll is hand-stitched by skilled artisans, making them unique collectibles for boutique retailers.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Cotton Yarn</span></div>
+          <div class="spec-item"><span class="spec-label">Filling</span><span class="spec-value">PP Cotton</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Doll%20Keychain" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Doll%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Ae2203f36a89c4a6fad0de013cc4a797dy.png" alt="Crochet Animal Keychain Frog Design"/></div>
+      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Ae2203f36a89c4a6fad0de013cc4a797dy.png" alt="Frog Prince Keychain"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Frog Prince Keychain</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Frog Prince Keychain</h3>
+        <p class="prod-desc">Adorable animal companions crafted with intricate detail. A popular impulse-buy item for specialized accessory retailers seeking handmade soul.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Design</span><span class="spec-value">Original Art</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Frog%20Keychain" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Frog%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Abd2eacc39e004888992f34053985885cF.png" alt="Handmade Crochet Teddy Bear Keychain"/></div>
+      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Abd2eacc39e004888992f34053985885cF.png" alt="Teddy Bear Keychain"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Classic Teddy Keychain</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Classic Teddy Keychain</h3>
+        <p class="prod-desc">Classic bear designs with a handcrafted twist. Our artisans ensure every stitch is perfect, creating a high-quality keepsake for global markets.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Handfeel</span><span class="spec-value">Ultra Soft</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Teddy%20Keychain" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Teddy%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A34e827d4cdc740ce9aaab7fa2763b71f8.png" alt="Crochet Bunny Rabbit Keychain Bulk"/></div>
+      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A34e827d4cdc740ce9aaab7fa2763b71f8.png" alt="Graceful Bunny Keychain"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Graceful Bunny Keychain</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Graceful Bunny Keychain</h3>
+        <p class="prod-desc">Elegant and cute, these bunnies are crafted for durability and aesthetic appeal. Perfect for children's promotions and ethical toy retailers.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Natural Yarn</span></div>
+          <div class="spec-item"><span class="spec-label">Quality</span><span class="spec-value">Child-Safe</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Bunny%20Keychain" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Bunny%20Keychain" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
   </div>
