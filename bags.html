@@ -6,60 +6,28 @@
 <title>Crochet Bags | PEIMI Handmade Crochet Factory</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-/* CSS Reset and Variables from index.html */
-:root{
-  --gold:#B08D57;
-  --cream:#F5EFE6;
-  --dark:#120e08;
-  --text:#3D2E22;
-  --muted:#8C7A68;
-  --light:#EDE3D8;
-  --white:#FAF6F0;
-  --border:rgba(140,100,60,0.15);
-}
+:root{ --gold:#B08D57; --cream:#F5EFE6; --dark:#120e08; --text:#3D2E22; --white:#FAF6F0; --border:rgba(140,100,60,0.15); }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;padding:0;}
-
-/* NAV (Simplified for skeletal reuse) */
-#nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 60px;height:68px;
-  background:#120e08;
-}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+#nav{ position:fixed;top:0;left:0;right:0;z-index:1000; display:flex;align-items:center;justify-content:space-between; padding:0 60px;height:68px; background:var(--dark); border-bottom:1px solid rgba(176,141,87,0.15); }
 .logo{font-size:22px;letter-spacing:3px;font-weight:800;color:var(--white);text-decoration:none;text-transform:uppercase;}
 .logo em{color:var(--gold);font-style:normal;}
 .nav-menu{display:flex;align-items:center;gap:36px;list-style:none;}
-.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;transition:color .2s;}
+.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;}
 .nav-item { position: relative; }
-.dropdown {
-  position: absolute; top: 100%; left: 0; background: #120e08; min-width: 220px;
-  border: 1px solid rgba(176,141,87,0.3); opacity: 0; visibility: hidden;
-  transform: translateY(10px); transition: all 0.3s ease; list-style: none; padding: 10px 0; z-index: 1001;
-}
+.dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); min-width: 220px; border: 1px solid rgba(176,141,87,0.3); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; list-style: none; padding: 10px 0; z-index: 1001; }
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown li a { padding: 12px 20px; display: block; font-size: 11px; color: rgba(255,255,255,0.7) !important; }
-.nav-menu li a::after { content: "▾"; margin-left: 5px; font-size: 8px; vertical-align: middle; opacity: 0.5; }
 
-/* HERO */
 .category-hero { padding: 160px 60px 80px; background: var(--dark); color: #fff; text-align: center; }
 .category-hero h1 { font-family: 'Playfair Display', serif; font-size: 56px; color: var(--gold); margin-bottom: 20px; }
 .category-hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 700px; margin: 0 auto; }
 
-/* PRODUCT GRID */
-.products-section{background:#F5EFE6;padding:96px 60px;}
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:20px;
-  width:100%;
-}
-@media (max-width: 1200px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .products-grid { grid-template-columns: 1fr; }
-}
+.products-section{ padding:120px 60px; background:var(--cream); }
+.products-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; width:100%; }
+@media (max-width: 1200px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } }
+
 .product-card{background:#FAF6F0;overflow:hidden;transition:all .35s ease;display:flex;flex-direction:column;border:1px solid var(--border);}
 .product-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(28,24,18,0.12);}
 .prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#FAF6F0;display:flex;align-items:center;justify-content:center;}
@@ -90,25 +58,16 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 }
 .prod-link:hover{background:var(--gold);}
 
-/* FOOTER */
 footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color: rgba(255,255,255,0.3); font-size: 12px;}
-
-@media (max-width: 768px) {
-  #nav { padding: 0 20px; }
-  .nav-menu { display: none; }
-  .category-hero { padding: 120px 20px 60px; }
-  .category-hero h1 { font-size: 36px; }
-  .products-grid { grid-template-columns: 1fr; }
-}
 </style>
 </head>
 <body>
-
 <nav id="nav">
   <a href="index.html" class="logo">PEI<em>MI</em></a>
   <ul class="nav-menu">
+    <li><a href="index.html">HOME</a></li>
     <li class="nav-item">
-      <a href="index.html#products">Products</a>
+      <a href="index.html#products">PRODUCTS</a>
       <ul class="dropdown">
         <li><a href="bags.html">Crochet Bags</a></li>
         <li><a href="bouquets.html">Handmade Bouquets</a></li>
@@ -118,55 +77,195 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
       </ul>
     </li>
     <li><a href="index.html#story">Our Story</a></li>
-    <li><a href="index.html#contact" style="background:var(--gold); padding:8px 16px; color:#fff;">Get a Quote</a></li>
+    <li><a href="index.html#contact" style="background:var(--gold); padding:8px 16px; color:#fff; font-weight:700; text-decoration:none;">Get a Quote</a></li>
   </ul>
 </nav>
 
 <section class="category-hero">
   <h1>Crochet Bags</h1>
-  <p>Discover our signature collection of handcrafted hollow totes and artisanal bags, woven with heritage techniques for modern retailers.</p>
+  <p>Our signature collection of handcrafted hollow totes and artisanal bags. Meticulously woven for brands seeking authentic sustainable luxury.</p>
 </section>
 
 <section class="products-section">
   <div class="products-grid">
+    <!-- Item 1 -->
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/H7561fdf9559c4021966a3d905953047aM.png" alt="Handmade Hollow Crochet Tote Bag Wholesale"/></div>
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01t5cbKU2BldWuz4e75_!!2212825188379-0-cib" alt="Handcrafted Shell Bag"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Signature Hollow Tote</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Artisan Shell Tote</h3>
+        <p class="prod-desc">Trendy handmade cotton shell bag. Perfect for summer beach collections and boutique retailers.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Signature%20Hollow%20Tote" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Shell Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
+    <!-- Item 2 -->
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A36e65a7f9273419bb6e282c0dfb39a8f4.png" alt="Crochet Mesh Shoulder Bag Bulk Order"/></div>
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01GUiql02BldQo4kZgY_!!2212825188379-0-cib" alt="Santa Holiday Bag"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Artisan Mesh Shoulder Bag</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Santa Holiday Bag</h3>
+        <p class="prod-desc">Festive Christmas themed crossbody bag. Meticulously stitched for the 2026 holiday season.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Process</span><span class="spec-value">100% Handmade</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Mesh%20Shoulder%20Bag" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Santa Holiday Bag" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
+    <!-- Item 3 -->
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A0f60742183e84323863777598c2374e2j.png" alt="Hand-Knitted Crochet Crossbody Bag Manufacturer"/></div>
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01BhDYNy2BldhBQJspF_!!2212825188379-0-cib" alt="Handmade Cosmetic Pouch"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Daily Crochet Crossbody</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Artisan Makeup Pouch</h3>
+        <p class="prod-desc">Sophisticated woven structure for beauty essentials. Export-grade quality for global retailers.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knotted</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Crossbody%20Bag" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Makeup Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
+    <!-- Item 4 -->
     <div class="product-card">
-      <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Aa654999f8d9546059ca9e66cb17e8870K.png" alt="Custom Crochet Beach Bag Factory Direct"/></div>
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01NlpZ1N2BldbxzjtVs_!!2212825188379-0-cib" alt="Colorful Chain Bag"/></div>
       <div class="prod-body">
-        <div>
-          <div class="prod-name">Boho Summer Beach Bag</div>
-          <div class="prod-moq">MOQ 200 pcs</div>
+        <h3 class="prod-name">Artisan Chain Tote</h3>
+        <p class="prod-desc">Vibrant celebration of heritage colors. High-perceived-value piece for ethical boutique collections.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Process</span><span class="spec-value">Hand-Knitted</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Beach%20Bag" class="prod-link" target="_blank">&#8594;</a>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Chain Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 5 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01jsMmK02BldarZcGYZ_!!2212825188379-0-cib" alt="Contrast Weave Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Contrast Weave Tote</h3>
+        <p class="prod-desc">Modern color-block design handcrafted over 25 hours. A highlight for urban retail displays.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Contrast Weave Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 6 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01Yp5uwo2BldY4rCn7f_!!2212825188379-0-cib" alt="Tassel Boho Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Boho Tassel Crossbody</h3>
+        <p class="prod-desc">Relaxed bohemian aesthetic with durable hand-knotted tassels. Designed for high-volume seasonal retail.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Artisan Woven</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Boho Tassel Crossbody" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 7 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01mznKPW2BldW4vJjjm_!!2212825188379-0-cib" alt="Signature Underarm Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Signature Woven Pouch</h3>
+        <p class="prod-desc">Chic handcrafted underarm bag for urban essentials. 100% handmade soul for global markets.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Signature Woven Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 8 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01laAor52BldUQi7U3Z_!!2212825188379-0-cib" alt="Masterpiece Underarm Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Artisan Underarm Bag</h3>
+        <p class="prod-desc">Compact, practical, and full of character. Woven with heritage techniques for modern retailers.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Stitched</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Underarm Bag" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 9 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01pPnO0Q2BldSTJnnSd_!!2212825188379-0-cib" alt="Creative Carrot Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Creative Carrot Pouch</h3>
+        <p class="prod-desc">Whimsical handcrafted design for playful retail collections. 100% hand-knotted by village artisans.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Creative Carrot Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 10 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01fJqaKd2BldS9cJvp7_!!2212825188379-0-cib" alt="Snow White Pearl Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Artisan Pearl Clutch</h3>
+        <p class="prod-desc">Elegant blend of crochet art and pearl chain details. A premium highlight for boutique evening wear collections.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knotted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Pearl Clutch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 11 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN01SJ7oOG2BldRuTFaZG_!!2212825188379-0-cib" alt="Cactus Drawstring Bag"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Artisan Cactus Pouch</h3>
+        <p class="prod-desc">Creative drawstring bag featuring cactus design. Capturing artisanal soul for specialized gift retailers.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Cactus Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- Item 12 -->
+    <div class="product-card">
+      <div class="prod-img"><img src="https://sc04.alicdn.com/img/ibank/O1CN016X6jDJ2Bldb6T0hR4_!!2212825188379-0-cib" alt="Mini Accessory Pouch"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Artisan Mini Pouch</h3>
+        <p class="prod-desc">Adorable hand-crocheted mini pouch for accessories. Meticulously stitched export quality.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Stitched</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Mini Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
   </div>
@@ -175,6 +274,5 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
 <footer>
   &copy; 2026 PEIMI &mdash; Yangjiang Peimi Industrial & Trading Co., Ltd. All rights reserved.
 </footer>
-
 </body>
 </html>
