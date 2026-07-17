@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<!-- Deployment Sync Version: 178429-FORCE-REDEPLOY -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Handmade Crochet Bouquets | PEIMI Handmade Crochet Factory</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -20,12 +19,16 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown li a { padding: 12px 20px; display: block; font-size: 11px; color: rgba(255,255,255,0.7) !important; }
 
-.category-hero { padding: 160px 60px 80px; background: var(--dark); color: #fff; text-align: center; }
-.category-hero h1 { font-family: 'Playfair Display', serif; font-size: 56px; color: var(--gold); margin-bottom: 20px; }
-.category-hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 700px; margin: 0 auto; }
+.category-hero { position:relative; width:100%; height:75vh; min-height:520px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; color:#fff; }
+.category-hero .hero-video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.category-hero .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,14,8,0.55) 0%, rgba(18,14,8,0.65) 100%); z-index:1; }
+.category-hero .hero-content { position:relative; z-index:2; padding:0 60px; }
+.category-hero h1 { font-family:'Playfair Display',serif; font-size:56px; color:var(--gold); margin-bottom:20px; }
+.category-hero p { font-size:18px; color:rgba(255,255,255,0.65); max-width:700px; margin:0 auto; }
+@media (max-width:768px) { .category-hero{height:60vh;min-height:380px;} .category-hero h1{font-size:36px;} .category-hero p{font-size:15px;} }
 
-.products-section{ padding:96px 60px; background:var(--cream); }
-.products-grid{ display:grid; grid-template-columns:repeat(4, 1fr) !important; gap:20px; width:100%; }
+.products-section{ padding:120px 60px; background:var(--cream); }
+.products-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; width:100%; }
 @media (max-width: 1200px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } }
 
@@ -60,8 +63,6 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .prod-link:hover{background:var(--gold);}
 
 footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color: rgba(255,255,255,0.3); font-size: 12px;}
-
-.section-inner{max-width:1240px;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -85,30 +86,109 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
 </nav>
 
 <section class="category-hero">
-  <h1>Handmade Bouquets</h1>
-  <p>Everlasting floral arrangements handcrafted with premium cotton yarn. Capturing the rhythmic grace of traditional hand-knitting for global B2B sourcing.</p>
+  <video class="hero-video" src="peimi_bouquet_hero_bg.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Handmade Bouquets</h1>
+    <p>Everlasting floral arrangements handcrafted with premium cotton yarn. Capturing the rhythmic grace of traditional hand-knitting for global B2B sourcing.</p>
+  </div>
 </section>
 
 <section class="products-section">
-  <div class="section-inner"><div class="products-grid">
-    <!-- Featured: Class of 2026 Graduation New Arrival -->
+  <div class="products-grid">
+    <!-- NEW ARRIVAL 1: Sunshine Harvest -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/H2d1dfad54eb94554b64b2e4411a8c1664.jpg" alt="Wholesale Graduation Crochet Teddy Bear Bouquet" style="mix-blend-mode: multiply; padding: 25px;"/></div>
+      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hc91d7e31f04c47aa8df4d1de80c54dfdI.jpg" alt="Sunshine Harvest Mixed Bouquet" style="mix-blend-mode: multiply; padding: 25px;"/></div>
       <div class="prod-body">
-        <h3 class="prod-name">Wholesale Graduation Crochet Teddy Bear Bouquet</h3>
-        <p class="prod-desc">Celebrate academic milestones with our exquisite Class of 2026 Graduation Bouquet. Featuring handcrafted amigurumi doctor bears and artisan-knitted flowers, this premium artificial preserved bouquet is a top-seller for campus retailers and bulk gift sourcing.</p>
+        <h3 class="prod-name">Sunshine Harvest Mixed Bouquet</h3>
+        <p class="prod-desc">A radiant symphony of handmade sunflowers and velvety roses. Wrapped in vibrant orange tones, this artisanal bouquet captures the warmth of a perfect harvest day.</p>
         <div class="prod-specs">
           <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
           <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Premium Soft Plush & Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
           <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Crocheted</span></div>
         </div>
-        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Wholesale%20Graduation%20Crochet%20Teddy%20Bear%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Sunshine%20Harvest%20Mixed%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- NEW ARRIVAL 2: Giant Sunflower -->
+    <div class="product-card">
+      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/H9c3c7b14fcbb469ea87f149b1b7123bdt.jpg" alt="Giant Sunflower Fields Bouquet" style="mix-blend-mode: multiply; padding: 25px;"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Giant Sunflower Fields Bouquet</h3>
+        <p class="prod-desc">Experience the abundance of summer with this lush, hand-knitted sunflower cluster. A bold centerpiece designed for high-end boutique decor and heartfelt gifts.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Giant%20Sunflower%20Fields%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- NEW ARRIVAL 3: Pastel Dream -->
+    <div class="product-card">
+      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hde6e5da269ee42debee4644bcfd95366m.jpg" alt="Pastel Dream Artisan Bouquet" style="mix-blend-mode: multiply; padding: 25px;"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Pastel Dream Artisan Bouquet</h3>
+        <p class="prod-desc">A serene fusion of soft pink lilies and lavender sprigs. Handcrafted with precision to bring a delicate, romantic aesthetic to sustainable event styling.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Pastel%20Dream%20Artisan%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- NEW ARRIVAL 4: Academic Excellence -->
+    <div class="product-card">
+      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hae12738b4e7b42868b8c6f5851832b14U.jpg" alt="2026 Academic Excellence Bear Bouquet" style="mix-blend-mode: multiply; padding: 25px;"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">2026 Academic Excellence Bear Bouquet</h3>
+        <p class="prod-desc">Celebrate academic milestones with our signature graduation bear bouquet. Featuring handcrafted amigurumi scholars amidst artisan-knitted blooms—a cherished keepsake for Class of 2026.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%202026%20Academic%20Excellence%20Bear%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- NEW ARRIVAL 5: Blushing Spring -->
+    <div class="product-card">
+      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/H9f3bd829890a4d1e99bb309c7d7121d8C.jpg" alt="Blushing Spring Tulip Bouquet" style="mix-blend-mode: multiply; padding: 25px;"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Blushing Spring Tulip Bouquet</h3>
+        <p class="prod-desc">Elegant pink tulips meticulously stitched to symbolize the first breath of spring. A timeless gift of everlasting beauty, perfect for Mother’s Day and anniversaries.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Blushing%20Spring%20Tulip%20Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
+      </div>
+    </div>
+    <!-- NEW ARRIVAL 6: Purple Whisper -->
+    <div class="product-card">
+      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hed4fd38ebd184def95149e1eb69dfe32p.jpg" alt="Purple Whisper Floral Arrangement" style="mix-blend-mode: multiply; padding: 25px;"/></div>
+      <div class="prod-body">
+        <h3 class="prod-name">Purple Whisper Floral Arrangement</h3>
+        <p class="prod-desc">A sophisticated blend of deep purple tulips and delicate white daisies. Hand-crocheted for a premium, poetic finish that adds a touch of mystery to any space.</p>
+        <div class="prod-specs">
+          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Crocheted</span></div>
+        </div>
+        <a href="https://wa.me/8615089572877?text=Hi%2C%20I'm%20interested%20in%20the%20Purple%20Whisper%20Floral%20Arrangement" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
     <!-- Item 1 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01mczMa82BldhjD1FRb_!!2212825188379-0-cib.jpg?v=178429" alt="Carnation Rose Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01mczMa82BldhjD1FRb_!!2212825188379-0-cib" alt="Carnation Rose Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Carnation Rose Bouquet</h3>
         <p class="prod-desc">Elegant handmade mix symbolizing love. Perfect for boutique gifting and floral retail displays.</p>
@@ -123,7 +203,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 2 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01ECdoIk2BldgfhgD7L_!!2212825188379-0-cib.jpg?v=178429" alt="Sunflower Puff Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01ECdoIk2BldgfhgD7L_!!2212825188379-0-cib" alt="Sunflower Puff Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Sunflower Puff Bouquet</h3>
         <p class="prod-desc">Radiant sunflowers paired with delicate puff flowers. A cheerful arrangement for sustainable events.</p>
@@ -138,7 +218,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 3 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN013bCEdm2BldfNrzBFL_!!2212825188379-0-cib.jpg?v=178429" alt="Everlasting Red Rose"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN013bCEdm2BldfNrzBFL_!!2212825188379-0-cib" alt="Everlasting Red Rose"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Everlasting Red Rose</h3>
         <p class="prod-desc">The ultimate symbol of love, preserved in high-quality yarn. Artisanal masterpiece for premium gifts.</p>
@@ -153,7 +233,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 4 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN017Uwqg82BldlFUijT0_!!2212825188379-0-cib.jpg?v=178429" alt="Graduation Bear Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN017Uwqg82BldlFUijT0_!!2212825188379-0-cib" alt="Graduation Bear Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Graduation Bear Bouquet</h3>
         <p class="prod-desc">A creative blend of amigurumi and floral art. Celebrate milestones with ethical handmade soul.</p>
@@ -168,7 +248,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 5 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01RqvuzK2Bldjjy0bNY_!!2212825188379-0-cib.jpg?v=178429" alt="Premium Carnation Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01RqvuzK2Bldjjy0bNY_!!2212825188379-0-cib" alt="Premium Carnation Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Premium Carnation Bouquet</h3>
         <p class="prod-desc">Meticulously stitched carnations for Mother's Day and appreciation gifts. Export-grade quality.</p>
@@ -183,7 +263,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 6 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN013im7Lu2BldaAYVdql_!!2212825188379-0-cib.jpg?v=178429" alt="Mixed Rose Mix Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN013im7Lu2BldaAYVdql_!!2212825188379-0-cib" alt="Mixed Rose Mix Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Mixed Rose Mix Bouquet</h3>
         <p class="prod-desc">Hand-knitted roses in diverse color palettes. A versatile inventory highlight for global retailers.</p>
@@ -198,7 +278,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 7 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01AU46uw2BldlfRaCiV_!!2212825188379-0-cib.jpg?v=178429" alt="Teacher Appreciation Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01AU46uw2BldlfRaCiV_!!2212825188379-0-cib" alt="Teacher Appreciation Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Teacher Appreciation Bouquet</h3>
         <p class="prod-desc">Radiant sunflowers representing respect and warmth. Meticulously knitted for commemorative gifts.</p>
@@ -213,7 +293,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 8 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01KZUoRy2BldeU2xDxZ_!!2212825188379-0-cib.jpg?v=178429" alt="Artisan Lily Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01KZUoRy2BldeU2xDxZ_!!2212825188379-0-cib" alt="Artisan Lily Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Artisan Lily Bouquet</h3>
         <p class="prod-desc">Elegant hand-crocheted lilies for home decor. A touch of serene beauty that never fades.</p>
@@ -228,7 +308,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 9 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01yzTaD22BldYutyP5K_!!2212825188379-0-cib.jpg?v=178429" alt="Exotic Sunflower Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01yzTaD22BldYutyP5K_!!2212825188379-0-cib" alt="Exotic Sunflower Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Exotic Sunflower Bouquet</h3>
         <p class="prod-desc">Global best-seller featuring sun-kissed stitches. Captures the vibrant essence of southern villages.</p>
@@ -243,7 +323,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 10 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01exea4T2BldiAljFsb_!!2212825188379-0-cib.jpg?v=178429" alt="Graduation Rose Mix"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01exea4T2BldiAljFsb_!!2212825188379-0-cib" alt="Graduation Rose Mix"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Graduation Rose Mix</h3>
         <p class="prod-desc">Commemorative mix of roses and sunflowers. Hand-crocheted for lasting graduation memories.</p>
@@ -258,7 +338,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 11 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01aqDivY2BldgusUDPe_!!2212825188379-0-cib.jpg?v=178429" alt="Eternal Rose Box"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01aqDivY2BldgusUDPe_!!2212825188379-0-cib" alt="Eternal Rose Box"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Eternal Rose Box</h3>
         <p class="prod-desc">Premium boxed rose arrangements. Meticulously stitched for high-end boutique retail collections.</p>
@@ -273,7 +353,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 12 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01wQhisN2BldeeiMRgS_!!2212825188379-0-cib.jpg?v=178429" alt="Tulip Artisan Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01wQhisN2BldeeiMRgS_!!2212825188379-0-cib" alt="Tulip Artisan Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Tulip Artisan Bouquet</h3>
         <p class="prod-desc">Vibrant hand-knitted tulips symbolizing spring. An essential addition to gift shop inventory.</p>
@@ -288,7 +368,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 13 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01AOw9Qd2BldOgNXi0B_!!2212825188379-0-cib.jpg?v=178429" alt="Deluxe Mixed Flora"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01AOw9Qd2BldOgNXi0B_!!2212825188379-0-cib" alt="Deluxe Mixed Flora"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Deluxe Mixed Flora</h3>
         <p class="prod-desc">Our largest mixed bouquet featuring sunflowers and roses. Maximum visual impact for retail.</p>
@@ -303,7 +383,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 14 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01Q9HLzT2BldgtpykBB_!!2212825188379-0-cib.jpg?v=178429" alt="Mini Sunflower Gift"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01Q9HLzT2BldgtpykBB_!!2212825188379-0-cib" alt="Mini Sunflower Gift"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Mini Sunflower Gift</h3>
         <p class="prod-desc">Adorable hand-stitched mini bouquets for corporate and business gifting.</p>
@@ -318,7 +398,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 15 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN0163T1Dy2BldfqlJUIt_!!2212825188379-0-cib.jpg?v=178429" alt="Graceful Tulip Mix"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN0163T1Dy2BldfqlJUIt_!!2212825188379-0-cib" alt="Graceful Tulip Mix"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Graceful Tulip Mix</h3>
         <p class="prod-desc">A sophisticated blend of tulips and roses. Hand-knitted with emotional resonance.</p>
@@ -333,7 +413,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 16 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01rUMQK62BldTaEHNmv_!!2212825188379-0-cib.jpg?v=178429" alt="Festival Flora Mix"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01rUMQK62BldTaEHNmv_!!2212825188379-0-cib" alt="Festival Flora Mix"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Festival Flora Mix</h3>
         <p class="prod-desc">Colorful handcrafted mix for holiday celebrations. Meticulously stitched for B2B wholesale.</p>
@@ -348,7 +428,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 17 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN012qrrvI2Bldk7feSAQ_!!2212825188379-0-cib.jpg?v=178429" alt="Animal Plush Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN012qrrvI2Bldk7feSAQ_!!2212825188379-0-cib" alt="Animal Plush Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Animal Plush Bouquet</h3>
         <p class="prod-desc">Creative mix of amigurumi characters and flowers. Top-tier choice for children's events.</p>
@@ -363,7 +443,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 18 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN017CCNaj2BldRqSHXJO_!!2212825188379-0-cib.jpg?v=178429" alt="Academic Excellence Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN017CCNaj2BldRqSHXJO_!!2212825188379-0-cib" alt="Academic Excellence Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Academic Excellence Bouquet</h3>
         <p class="prod-desc">Classic graduation sunflower mix. Hand-crocheted for durable, life-long memories.</p>
@@ -378,7 +458,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 19 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01O2ynqH2BldiCxZ6Eh_!!2212825188379-0-cib.jpg?v=178429" alt="Artisan Rose Collection"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01O2ynqH2BldiCxZ6Eh_!!2212825188379-0-cib" alt="Artisan Rose Collection"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Artisan Rose Collection</h3>
         <p class="prod-desc">Single-stem masterwork roses for boutique retail. Purely hand-knitted export quality.</p>
@@ -393,7 +473,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- Item 20 -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/img/ibank/O1CN01F1xQvk2BldeAQ6bKS_!!2212825188379-0-cib.jpg?v=178429" alt="Christmas Special Bouquet"/></div>
+      <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/img/ibank/O1CN01F1xQvk2BldeAQ6bKS_!!2212825188379-0-cib" alt="Christmas Special Bouquet"/></div>
       <div class="prod-body">
         <h3 class="prod-name">Christmas Special Bouquet</h3>
         <p class="prod-desc">Festive holiday mix for 2026 sourcing. Handcrafted to bring artisanal warmth to the season.</p>
@@ -406,7 +486,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
         <a href="https://wa.me/8615089572877?text=Inquiry: Christmas Special Bouquet" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
-  </div></div>
+  </div>
 </section>
 <footer>&copy; 2026 PEIMI &mdash; Yangjiang Peimi Industrial & Trading Co., Ltd. All rights reserved.</footer>
 </body>
