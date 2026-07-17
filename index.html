@@ -123,16 +123,16 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 
 /* ===== NAV ===== */
 #nav{
-  position:absolute;top:0;left:0;right:0;z-index:1000;
+  position:fixed;top:0;left:0;right:0;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 60px;height:80px;
-  background:transparent;
-  border-bottom:none;
+  padding:0 60px;height:68px;
+  background:#120e08;
+  border-bottom:1px solid rgba(176,141,87,0.15);
 }
 .logo{font-family:'Inter',sans-serif;font-size:22px;letter-spacing:3px;font-weight:800;color:var(--white);text-decoration:none;text-transform:uppercase;}
 .logo em{color:var(--gold);font-style:normal;}
 .nav-menu{display:flex;align-items:center;gap:36px;list-style:none;}
-.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none;font-weight:600;transition:color .2s;}
+.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;transition:color .2s;}
 .nav-menu a:hover{color:var(--gold);}
 
 /* Dropdown Styles */
@@ -141,7 +141,7 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--dark);
+  background: #120e08;
   min-width: 220px;
   border: 1px solid rgba(176,141,87,0.3);
   opacity: 0;
@@ -183,101 +183,86 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .nav-btn{background:var(--gold);color:var(--white);padding:10px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:700;transition:background .2s;}
 .nav-btn:hover{background:#9a7a48;}
 
-/* ===== HERO (VIDEO BACKGROUND) ===== */
-#hero {
-  position: relative;
-  height: 80vh;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--dark);
+/* ===== HERO ===== */
+#hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;align-items:center;
+  padding-top:68px;
+  overflow:hidden;
 }
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+.hero-bg-img{
+  position:absolute;inset:0;
+  background:url('https://raw.githubusercontent.com/Peimi-crochet/peimi-website/main/hero.avif') center/cover no-repeat;
+  z-index:0;
 }
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 2;
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,rgba(18,14,8,0.92) 0%,rgba(18,14,8,0.65) 50%,rgba(18,14,8,0.2) 100%);
 }
-.hero-container {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  max-width: 1240px;
-  padding: 0 60px;
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 60px 80px 60px;
+  position:relative;z-index:2;
+  max-width:660px;
 }
-.hero-content {
-  max-width: 800px;
-  text-align: left;
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(176,141,87,0.4);
+  padding:8px 18px;margin-bottom:36px;width:fit-content;
+  border-radius:40px;
 }
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid rgba(176,141,87,0.4);
-  padding: 8px 18px;
-  margin-bottom: 30px;
-  border-radius: 40px;
+.hero-tag::before{content:'●';font-size:7px;}
+.hero-h1{
+  font-family:'Inter',sans-serif;
+  font-size:82px;line-height:0.95;font-weight:800;
+  color:var(--white);margin-bottom:28px;
+  letter-spacing:-2px;
+  text-transform:uppercase;
 }
-.hero-tag::before { content: '●'; font-size: 7px; }
-.hero-h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 72px;
-  line-height: 1.05;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: -2px;
+.hero-h1 em{color:var(--gold);font-style:normal;}
+.hero-desc{
+  font-size:15px;line-height:1.8;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:36px;max-width:420px;
 }
-.hero-h1 em { color: var(--gold); font-style: normal; }
-.hero-desc {
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 40px;
-  max-width: 550px;
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+.hero-pill{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:40px;
+  font-size:12px;font-weight:500;
 }
-.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-primary {
-  background: var(--gold);
-  color: #fff;
-  padding: 18px 42px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.3s ease;
+.hero-pill strong{color:var(--gold);}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--gold);color:var(--white);
+  padding:16px 36px;font-size:12px;letter-spacing:2px;
+  text-transform:uppercase;text-decoration:none;font-weight:700;
+  transition:background .2s;display:inline-flex;align-items:center;gap:8px;
 }
-.btn-primary:hover { background: #9a7a48; }
-.btn-outline {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  padding: 18px 42px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.btn-primary:hover{background:#9a7a48;}
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.2);color:var(--white);
+  padding:16px 36px;font-size:12px;letter-spacing:2px;
+  text-transform:uppercase;text-decoration:none;font-weight:500;
+  transition:all .2s;display:inline-flex;align-items:center;gap:8px;
 }
-.btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: #fff; }
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+.hero-right{
+  position:relative;flex:1;
+  /* 右边透出背景图，无需额外图片 */
+  display:none;
+}
+.hero-stats{
+  display:flex;gap:0;margin-top:56px;
+  border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;
+}
+.hero-stat{flex:1;padding-right:32px;border-right:1px solid rgba(255,255,255,0.08);margin-right:32px;}
+.hero-stat:last-child{border-right:none;margin-right:0;}
+.hero-stat-n{font-family:'Inter',sans-serif;font-size:32px;font-weight:800;color:var(--gold);}
+.hero-stat-l{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
 
 /* ===== MARQUEE ===== */
 .marquee-bar{background:var(--gold);padding:12px 0;overflow:hidden;}
@@ -328,7 +313,7 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 }
 .product-card{background:#FAF6F0;overflow:hidden;transition:all .35s ease;display:flex;flex-direction:column;border:1px solid var(--border);}
 .product-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(28,24,18,0.12);}
-.prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#F5EFE6;display:flex;align-items:center;justify-content:center;}
+.prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#FAF6F0;display:flex;align-items:center;justify-content:center;}
 .prod-img img{
   width:100%;height:100%;object-fit:contain;
   padding:5px;
@@ -585,20 +570,26 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 
 <!-- HERO -->
 <section id="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="https://raw.githubusercontent.com/Peimi-crochet/peimi-website/main/hero.avif">
-    <source src="assets/hero-video.mp4" type="video/mp4">
-  </video>
+  <div class="hero-bg-img"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-container">
-    <div class="hero-content">
-      <div class="hero-tag">China's #1 Crochet Manufacturer &middot; Est. 2015</div>
-      <h1 class="hero-h1">THE ART OF<br>HAND-KNITTED<br><em>LUXURY.</em></h1>
-      <p class="hero-desc">Direct from Yangjiang. 2000+ artisans, 100% handmade crochet solutions for global B2B retailers seeking authentic craftsmanship.</p>
-      <div class="hero-actions">
-        <a href="#products" class="btn-primary">Explore Collection</a>
-        <a href="#contact" class="btn-outline">Custom Inquiry</a>
-      </div>
+  <div class="hero-left">
+    <div class="hero-tag">China's #1 Crochet Manufacturer &middot; Est. 2015</div>
+    <h1 class="hero-h1">Wholesale Crochet<br>Bags &amp; Bouquets<br><em>Factory Direct.</em></h1>
+    <p class="hero-desc">Factory-direct handcrafted crochet bags, bouquets &amp; more &mdash; custom OEM/ODM, no middlemen.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">MOQ: <strong>200 pcs</strong></span>
+      <span class="hero-pill">Lead Time: <strong>15 Days</strong></span>
+      <span class="hero-pill">Shipping to <strong>60+ Countries</strong></span>
+      <span class="hero-pill"><strong>Free</strong> Sample Available</span>
     </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">&#8594; Get Free Sample Quote</a>
+      <a href="https://wa.me/8615089572877" target="_blank" class="btn-outline">WhatsApp Us Now</a>
+    </div>
+
+  </div>
+  <div class="hero-right">
+    <img src="https://raw.githubusercontent.com/Peimi-crochet/peimi-website/main/hero.avif" alt="PEIMI Crochet Factory - Wholesale Handmade Crochet Products China"/>
   </div>
 </section>
 
@@ -648,7 +639,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
       <div class="prod-group-label">Signature Crochet Bags</div>
       <div class="products-grid">
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/kf/H749cc281e3144994b5b1f130194a5e0e6.png" alt="Boho Crochet Granny Square Tote Bag Wholesale - PEIMI Factory" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H749cc281e3144994b5b1f130194a5e0e6.png" alt="Boho Crochet Granny Square Tote Bag Wholesale - PEIMI Factory" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Granny Square Tote</h3>
             <p class="prod-desc">A vibrant masterpiece of rhythmic grace. Each square is handcrafted over 20 hours, offering a nostalgic yet modern boho aesthetic for collections.</p>
@@ -662,7 +653,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/kf/Hcd32b0a96164408a857c7d6106d303caa.png" alt="Hollow Crochet Bag Factory - Premium Handmade Totes Wholesale" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/Hcd32b0a96164408a857c7d6106d303caa.png" alt="Hollow Crochet Bag Factory - Premium Handmade Totes Wholesale" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Signature Hollow Tote</h3>
             <p class="prod-desc">Our iconic hollow-weave pattern reimagined for high-capacity use. Breathable, durable, and 100% hand-knotted by master artisans using organic yarn.</p>
@@ -676,7 +667,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/kf/H1d8c6d1cf95c4f6283b229412011757a6.png" alt="Wholesale Custom Crochet Bags for Brands" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H1d8c6d1cf95c4f6283b229412011757a6.png" alt="Wholesale Custom Crochet Bags for Brands" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Daily Crochet Tote</h3>
             <p class="prod-desc">The perfect blend of functionality and craftsmanship. Designed for everyday urban use, this tote brings the soul of traditional hand-knitting to life.</p>
@@ -690,7 +681,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc01.alicdn.com/kf/H34aa6fea030e4c7ca9d2a1843c4cf129x.png" alt="Colorful Granny Square Crochet Bag Wholesale" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://sc01.alicdn.com/kf/H34aa6fea030e4c7ca9d2a1843c4cf129x.png" alt="Colorful Granny Square Crochet Bag Wholesale" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Artisan Colorful Bag</h3>
             <p class="prod-desc">A celebration of heritage colors and sustainable yarns. This high-perceived-value piece is an essential highlight for ethical boutique collections.</p>
@@ -711,7 +702,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
       <div class="prod-group-label">Handmade Bouquets</div>
       <div class="products-grid">
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/A3f41f72f6874425d9ba26e868ee73211U.png" alt="Handmade Crochet Lily Lavender Flower Bouquet Wholesale" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A3f41f72f6874425d9ba26e868ee73211U.png" alt="Handmade Crochet Lily Lavender Flower Bouquet Wholesale" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Lily & Lavender Bouquet</h3>
             <p class="prod-desc">A serene blend of handcrafted elegance. These everlasting crochet lilies and lavender sprigs bring a touch of Provencal charm to any boutique gift collection.</p>
@@ -725,7 +716,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/A72cbae601f0a4aa5aab77c9f482860a3l.png" alt="Wholesale Crochet Mixed Flower Bouquet Handmade" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A72cbae601f0a4aa5aab77c9f482860a3l.png" alt="Wholesale Crochet Mixed Flower Bouquet Handmade" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Mixed Flower Bouquet</h3>
             <p class="prod-desc">A vibrant symphony of handcrafted flora. Expertly knitted to capture the essence of spring, this best-selling mixed bouquet is perfect for sustainable event gifting.</p>
@@ -739,7 +730,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://s.alicdn.com/@sc04/kf/H471b099d8b3c4b63b2b13854adadf662E.jpg" alt="Wholesale Crochet Sunflower Bouquet Factory Direct" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H471b099d8b3c4b63b2b13854adadf662E.jpg" alt="Wholesale Crochet Sunflower Bouquet Factory Direct" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Sunflower Bouquet</h3>
             <p class="prod-desc">Radiant sun-kissed stitches that never fade. Our signature handmade sunflowers symbolize loyalty and warmth, making them a top choice for B2B inventory.</p>
@@ -753,7 +744,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/Aabdb61adb96d4ab2b8bfc225ff1da2b8h.png" alt="Mixed Crochet Flower Bouquet Bulk Order" loading="lazy"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Aabdb61adb96d4ab2b8bfc225ff1da2b8h.png" alt="Mixed Crochet Flower Bouquet Bulk Order" loading="lazy"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Mixed Crochet Bouquet</h3>
             <p class="prod-desc">The ultimate showcase of artisan skill. A diverse collection of crochet blossoms designed for high-end retail displays and eco-conscious floral arrangements.</p>
@@ -774,7 +765,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
       <div class="prod-group-label">Amigurumi &amp; Keychains</div>
       <div class="products-grid">
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/A53515f38034941ce9233cdf934e224eaL.png" alt="Premium Handcrafted Amigurumi Dolls Wholesale"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A53515f38034941ce9233cdf934e224eaL.png" alt="Premium Handcrafted Amigurumi Dolls Wholesale"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Crochet Doll Keychain</h3>
             <p class="prod-desc">Premium handcrafted amigurumi dolls. Expertly knitted with vibrant details, these charming characters are top-tier gift choices for nursery and lifestyle retailers.</p>
@@ -788,7 +779,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/Ae2203f36a89c4a6fad0de013cc4a797dy.png" alt="Wholesale Handmade Crochet Animal Keychains Frog Designs"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Ae2203f36a89c4a6fad0de013cc4a797dy.png" alt="Wholesale Handmade Crochet Animal Keychains Frog Designs"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Frog Prince Keychain</h3>
             <p class="prod-desc">Wholesale handmade crochet animal keychains. Our signature artisan frog design offers a playful yet sophisticated touch for global retail collections.</p>
@@ -802,7 +793,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/Abd2eacc39e004888992f34053985885cF.png" alt="Classic Hand-Knitted Teddy Bear Keychain Wholesale"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/Abd2eacc39e004888992f34053985885cF.png" alt="Classic Hand-Knitted Teddy Bear Keychain Wholesale"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Teddy Bear Keychain</h3>
             <p class="prod-desc">Classic hand-knitted teddy bear charms. Crafted with ultra-soft sustainable yarn, these plush accessories provide an emotional connection for end consumers.</p>
@@ -816,7 +807,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           </div>
         </div>
         <div class="product-card">
-          <div class="prod-img"><img loading=lazy src="https://sc02.alicdn.com/kf/A34e827d4cdc740ce9aaab7fa2763b71f8.png" alt="Exquisite Artisan Crochet Rabbit Keychain Charms"/></div>
+          <div class="prod-img"><img src="https://sc02.alicdn.com/kf/A34e827d4cdc740ce9aaab7fa2763b71f8.png" alt="Exquisite Artisan Crochet Rabbit Keychain Charms"/></div>
           <div class="prod-body">
             <h3 class="prod-name">Graceful Bunny Keychain</h3>
             <p class="prod-desc">Exquisite artisan crochet rabbit charms. A symbol of handmade warmth and seasonal joy, meticulously stitched for high-volume B2B sourcing.</p>
@@ -912,7 +903,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 <section class="story-section" id="story">
   <div class="story-grid">
     <div class="story-img-wrap">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;width:100%;"><div style="position:relative;"><img loading=lazy src="https://sc02.alicdn.com/kf/Aed4b140526a345afa34c6afa5b994bc4a.png" alt="Crochet Workshop" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Crafting</div></div><div style="position:relative;"><img loading=lazy src="https://sc02.alicdn.com/kf/A5190ffbb52fb4c9a8c6ef841a0fc6337C.png" alt="Assembly" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Assembly</div></div><div style="position:relative;"><img loading=lazy src="https://sc02.alicdn.com/kf/A2570bd7596ce48459e345f8bcbd353caI.png" alt="Packaging" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Packaging</div></div><div style="position:relative;"><img loading=lazy src="https://sc02.alicdn.com/kf/A2da5e3d85b7a496296f01fc46c2037a3I.png" alt="Warehouse" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Warehouse</div></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;width:100%;"><div style="position:relative;"><img src="https://sc02.alicdn.com/kf/Aed4b140526a345afa34c6afa5b994bc4a.png" alt="Crochet Workshop" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Crafting</div></div><div style="position:relative;"><img src="https://sc02.alicdn.com/kf/A5190ffbb52fb4c9a8c6ef841a0fc6337C.png" alt="Assembly" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Assembly</div></div><div style="position:relative;"><img src="https://sc02.alicdn.com/kf/A2570bd7596ce48459e345f8bcbd353caI.png" alt="Packaging" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Packaging</div></div><div style="position:relative;"><img src="https://sc02.alicdn.com/kf/A2da5e3d85b7a496296f01fc46c2037a3I.png" alt="Warehouse" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"/><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(18,14,8,0.55);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:7px 4px;">Warehouse</div></div></div>
       <div class="story-badge">
         <div class="story-badge-n">2015</div>
         <div class="story-badge-l">Est.</div>
