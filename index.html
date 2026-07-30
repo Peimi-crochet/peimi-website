@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Wholesale Crochet Bags, Bouquets, Keychains &amp; Custom Charms | PEIMI Factory</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="PEIMI: Specialized hollow crochet bag factory &amp; China crochet manufacturer. Wholesale handmade bags, bouquets, &amp; amigurumi dolls. Reliable lead times, expert OEM/ODM service, and factory-direct pricing for global B2B retailers."/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<meta name="description" content="PEIMI: Specialized hollow crochet bag factory &amp; China crochet manufacturer. Wholesale handmade bags, bouquets, &amp; amigurumi dolls. Reliable lead times, expert OEM/ODM service, and factory-direct pricing for global B2B retailers.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{ --gold:#B08D57; --cream:#F5EFE6; --dark:#120e08; --text:#3D2E22; --white:#FAF6F0; --border:rgba(140,100,60,0.15); }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -20,7 +20,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .nav-menu, .nav-menu ul, .nav-menu li { list-style: none !important; margin: 0; padding: 0; }
 .nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;transition:all 0.3s ease;}
 .nav-menu a:hover{color:var(--gold);}
-.nav-dropdown-trigger::after { content: "▾"; margin-left: 5px; opacity: 0.5; font-size: 10px; }
+.nav-dropdown-trigger::after { content: "\25BE"; margin-left: 5px; opacity: 0.5; font-size: 10px; }
 .nav-item { position: relative; }
 .dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); min-width: 220px; border: 1px solid rgba(176,141,87,0.3); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; list-style: none; padding: 10px 0; z-index: 1001; }
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -33,6 +33,10 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .hero-h1{ font-family:'Playfair Display',serif; font-size:64px; color:var(--dark); line-height:1.1; margin-bottom:24px; text-transform: uppercase; }
 .hero-desc{ font-size:18px; color:#8C7A68; max-width:540px; margin-bottom:40px; }
 .hero-right img{ width:100%; height:auto; border-radius:4px; box-shadow:0 40px 100px rgba(0,0,0,0.1); }
+
+.category-hero{ padding:160px 60px 80px; background:var(--cream); text-align:center; }
+.category-hero h1{ font-family:'Playfair Display',serif; font-size:52px; color:var(--dark); margin-bottom:20px; text-transform:uppercase; }
+.category-hero p{ font-size:18px; color:#8C7A68; max-width:700px; margin:0 auto; }
 
 .products-section{ padding:120px 60px; background:var(--cream); }
 .products-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; }
@@ -51,6 +55,15 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .prod-link:hover{ background:var(--gold); }
 
 .story-section{ padding:120px 60px; }
+.contact-section{ padding:100px 60px; background:var(--cream); text-align:center; }
+.contact-section h2{ font-family:'Playfair Display',serif; font-size:40px; margin-bottom:30px; text-transform:uppercase; color:var(--dark); }
+.contact-section p{ font-size:16px; color:#8C7A68; max-width:600px; margin:0 auto 40px; line-height:2; }
+.contact-links{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.contact-link{ display:inline-flex; align-items:center; gap:8px; padding:16px 36px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-decoration:none; border-radius:4px; transition:all 0.3s ease; }
+.contact-link-wa{ background:#25D366; color:#fff; }
+.contact-link-wa:hover{ background:#1da851; transform:translateY(-2px); }
+.contact-link-email{ background:var(--dark); color:#fff; }
+.contact-link-email:hover{ background:var(--gold); transform:translateY(-2px); }
 footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; text-align:center; font-size:12px; }
 
 @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } .hero-section { grid-template-columns: 1fr; text-align: center; } .hero-desc { margin: 0 auto 40px; } }
@@ -68,7 +81,7 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
       <ul class="dropdown">
         <li><a href="bags.html">CROCHET BAGS</a></li>
         <li><a href="bouquets.html">HANDMADE BOUQUETS</a></li>
-        <li><a href="accessories.html">KEYCHAINS &amp; CUSTOM CHARMS</a></li>
+        <li><a href="accessories.html">Dolls &amp; Accessories</a></li>
         <li><a href="christmas.html" class="nav-highlight">CHRISTMAS SPECIALS</a></li>
         <li><a href="#products">VIEW ALL</a></li>
       </ul>
@@ -86,16 +99,15 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
     <a href="#contact" class="nav-btn" style="display:inline-block;">INQUIRE FOR WHOLESALE QUOTE</a>
   </div>
   <div class="hero-right">
-    <img src="https://raw.githubusercontent.com/Peimi-crochet/peimi-website/main/hero.avif" alt="PEIMI Crochet Factory - Wholesale Handmade Products"/>
+    <img src="hero.avif" alt="PEIMI Crochet Factory - Wholesale Handmade Products">
   </div>
 </section>
 
 <section class="products-section" id="products">
   <div class="section-inner">
     <div class="products-grid">
-      <!-- Item 1: Bags -->
       <div class="product-card">
-        <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H749cc281e3144994b5b1f130194a5e0e6.png" alt="Boho Crochet Tote"/></div>
+        <div class="prod-img"><img src="https://s.alicdn.com/@sc04/kf/H749cc281e3144994b5b1f130194a5e0e6.png" alt="Boho Crochet Tote"></div>
         <div class="prod-body">
           <h3 class="prod-name">Artisan Boho Tote</h3>
           <p class="prod-desc">Traditional handcrafted cotton bag featuring intricate rhythmic grace. Perfect for ethical boutique retailers.</p>
@@ -106,7 +118,42 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
           <a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire Now</a>
         </div>
       </div>
-      <!-- Add more items continue... -->
+      <div class="product-card">
+        <div class="prod-img"><img src="https://s.alicdn.com/@sc04/img/ibank/O1CN015v6hG02Bldc70u12g_!!2212825188379-0-cib.jpg" alt="Artisan Tulip Bouquet"></div>
+        <div class="prod-body">
+          <h3 class="prod-name">Artisan Tulip Bouquet</h3>
+          <p class="prod-desc">Elegant hand-knitted tulips. A soulful, sustainable choice for premium gift retailers.</p>
+          <div class="prod-specs">
+            <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+            <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          </div>
+          <a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-img"><img src="https://s.alicdn.com/@sc04/img/ibank/O1CN01sxEqw22Bldic4M14W_!!2212825188379-0-cib.jpg" alt="Artisan Positive Doll"></div>
+        <div class="prod-body">
+          <h3 class="prod-name">Artisan Positive Doll</h3>
+          <p class="prod-desc">Encouraging handcrafted doll with emotional connection. Perfect as a soulful handmade promotional gift.</p>
+          <div class="prod-specs">
+            <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+            <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
+          </div>
+          <a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-img"><img src="https://s.alicdn.com/@sc04/img/ibank/O1CN01t5cbKU2BldWuz4e75_!!2212825188379-0-cib.jpg" alt="Handcrafted Shell Bag"></div>
+        <div class="prod-body">
+          <h3 class="prod-name">Artisan Shell Tote</h3>
+          <p class="prod-desc">Trendy handmade cotton shell bag. Perfect for summer beach collections and boutique retailers.</p>
+          <div class="prod-specs">
+            <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
+            <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
+          </div>
+          <a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire Now</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -114,11 +161,22 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
 <section class="story-section" id="story">
   <div class="section-inner" style="max-width:800px; text-align:center;">
     <h2 style="font-family:'Playfair Display',serif; font-size:40px; margin-bottom:30px; text-transform: uppercase;">OUR STORY: Craftsmanship with a Soul</h2>
-    <p style="font-size:16px; color:var(--muted); line-height:2;">Founded in 2015, PEIMI began with a simple mission: to preserve the rhythmic grace of traditional hand-knitting. Today, we empower over 2,000 rural artisans, including women and individuals with disabilities, providing a sanctuary where every needle stitch carries the warmth of a human soul. Our factory-direct model ensures ethical production and premium quality for wholesale partners worldwide.</p>
+    <p style="font-size:16px; color:#8C7A68; line-height:2;">Founded in 2015, PEIMI began with a simple mission: to preserve the rhythmic grace of traditional hand-knitting. Today, we empower over 2,000 rural artisans, including women and individuals with disabilities, providing a sanctuary where every needle stitch carries the warmth of a human soul. Our factory-direct model ensures ethical production and premium quality for wholesale partners worldwide.</p>
   </div>
 </section>
 
-<footer>© 2026 PEIMI CROCHET FACTORY. ALL RIGHTS RESERVED.</footer>
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <h2>GET IN TOUCH</h2>
+    <p>Ready to start your wholesale journey? Connect with our team for factory-direct pricing, custom OEM/ODM inquiries, and bulk order consultations.</p>
+    <div class="contact-links">
+      <a href="https://wa.me/8615089572877" class="contact-link contact-link-wa" target="_blank">WhatsApp Inquiry</a>
+      <a href="mailto:ririainipeimi@gmail.com" class="contact-link contact-link-email">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 PEIMI CROCHET FACTORY. ALL RIGHTS RESERVED.</footer>
 
 </body>
 </html>
