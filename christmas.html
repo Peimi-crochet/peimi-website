@@ -80,7 +80,10 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
   vertical-align: middle;
   opacity: 0.5;
 }
-.nav-menu li:last-child a::after { display:none; } /* No arrow for CTA */
+.nav-menu li a.nav-btn::after, .dropdown li a::after { content: none; }
+
+.nav-btn{background:var(--gold);color:var(--white);padding:10px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:700;transition:background .2s;}
+.nav-btn:hover{background:#9a7a48;}
 
 /* ===== RESPONSIVE NAV ===== */
 .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;}
@@ -115,6 +118,8 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
     padding: 10px 0;
     margin-top: 10px;
   }
+  .nav-menu li a::after { float: right; }
+  .nav-item.active > a::after { content: "▴"; }
 }
 
 /* ===== CHRISTMAS PAGE SPECIFIC ===== */
@@ -165,7 +170,7 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
       </ul>
     </li>
     <li><a href="index.html#story">Our Story</a></li>
-    <li><a href="index.html#contact" style="background:var(--gold); padding:10px 20px; color:#fff; font-weight:700; text-decoration:none; border-radius:2px; letter-spacing:1px;">Get a Quote</a></li>
+    <li><a href="index.html#contact" class="nav-btn">Get a Quote</a></li>
   </ul>
 </nav>
 
@@ -178,22 +183,8 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
 <section class="products-section">
   <div class="section-inner">
     <div class="products-grid">
-      <!-- Item 1 -->
-      <div class="product-card">
-        <div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_1.png?v=178429" alt="Artisan Santa Charm"/></div>
-        <div class="prod-body">
-          <h3 class="prod-name">Artisan Santa Charm</h3>
-          <p class="prod-desc">Whimsical handcrafted Santa characters. Meticulously stitched for high-end festive boutique retailers.</p>
-          <div class="prod-specs">
-            <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-            <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-            <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div>
-            <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Handmade</span></div>
-          </div>
-          <a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-        </div>
-      </div>
-      <!-- Item 2-11 same as before... -->
+      <!-- Item 1-20 (Names and descriptions already unique per previous task) -->
+      <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_1.png?v=178429" alt="Artisan Santa Charm"/></div><div class="prod-body"><h3 class="prod-name">Artisan Santa Charm</h3><p class="prod-desc">Whimsical handcrafted Santa characters. Meticulously stitched for high-end festive boutique retailers.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Handmade</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_2.png?v=178429" alt="Snowman Mini Pot"/></div><div class="prod-body"><h3 class="prod-name">Snowman Mini Pot</h3><p class="prod-desc">Adorable hand-stitched mini potted snowmen for festive business and corporate gifting.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_3.jpg?v=178429" alt="Artisan Reindeer Charm"/></div><div class="prod-body"><h3 class="prod-name">Artisan Reindeer Charm</h3><p class="prod-desc">Elegant hand-knitted reindeer charms. A symbol of handmade warmth and seasonal joy.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_4.jpg?v=178429" alt="Handcrafted Christmas Sock"/></div><div class="prod-body"><h3 class="prod-name">Handcrafted Christmas Sock</h3><p class="prod-desc">A cozy and traditional handcrafted Christmas stocking. Capturing the rhythmic grace of heritage knitting.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Handmade</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
@@ -218,14 +209,11 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
           <a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a>
         </div>
       </div>
-      <!-- Items 13-17 -->
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_13.jpg?v=178429" alt="Artisan Polar Bear Friend"/></div><div class="prod-body"><h3 class="prod-name">Artisan Polar Bear Friend</h3><p class="prod-desc">Soft and cuddly polar bear amigurumi. A heartwarming winter companion for ethical gift collections.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Stitched</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_14.jpg?v=178429" alt="Wisdom Holiday Owl"/></div><div class="prod-body"><h3 class="prod-name">Wisdom Holiday Owl</h3><p class="prod-desc">Detailed owl ornaments for a rustic holiday theme. 100% hand-knotted by village masters.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_15.png?v=178429" alt="Festive Poinsettia Flower"/></div><div class="prod-body"><h3 class="prod-name">Festive Poinsettia</h3><p class="prod-desc">Elegant hand-crocheted holiday flowers. Durable and sustainable festive decor.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_16.jpg?v=178429" alt="Celestial Seraph Figure"/></div><div class="prod-body"><h3 class="prod-name">Celestial Seraph Figure</h3><p class="prod-desc">Heavenly hand-crocheted seraphs for tree toppers. Serene and timeless artisan quality.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">100% Hand-Knitted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_17.jpg?v=178429" alt="Artisan Reindeer Figure"/></div><div class="prod-body"><h3 class="prod-name">Artisan Reindeer Figure</h3><p class="prod-desc">Sturdy handcrafted reindeer figures. Perfect for table centerpieces and holiday retail displays.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
-
-      <!-- Item 18: Gingerbread Man -->
       <div class="product-card">
         <div class="prod-img"><img loading="lazy" src="https://cbu01.alicdn.com/img/ibank/O1CN01Opafpj1iTCkZwjff2_!!2214807374413-0-cib.jpg" alt="Artisan Gingerbread Man"/></div>
         <div class="prod-body">
@@ -241,8 +229,6 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
         </div>
       </div>
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_19.jpg?v=178429" alt="Tiny Cozy Mittens"/></div><div class="prod-body"><h3 class="prod-name">Tiny Cozy Mittens</h3><p class="prod-desc">Adorable mini mitten charms for winter-themed gifting. Export-grade quality for global retailers.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
-      
-      <!-- Item 20: Santa Pouch -->
       <div class="product-card">
         <div class="prod-img"><img loading="lazy" src="https://cbu01.alicdn.com/img/ibank/O1CN01ftHljm1jp1QsYBeaK_!!2216119154596-0-cib.jpg" alt="Artisan Santa Pouch"/></div>
         <div class="prod-body">
