@@ -1,4 +1,4 @@
-<html lang="en" dxb-manifest="3.4.13"><head><link rel="stylesheet" href="https://js-c.etc4.com/ui/css/6ppn-dxb-theme@2.8.0.css"><link rel="stylesheet" href="https://www.6ppn.com/ext/assets/style.CMoYtLrp.css?v=u5D9d5MHIBnJ3EeGlD1eksxJZTVvKfDq">
+﻿<html lang="en" dxb-manifest="3.4.13"><head><link rel="stylesheet" href="https://js-c.etc4.com/ui/css/6ppn-dxb-theme@2.8.0.css"><link rel="stylesheet" href="https://www.6ppn.com/ext/assets/style.CMoYtLrp.css?v=u5D9d5MHIBnJ3EeGlD1eksxJZTVvKfDq">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>2026 Wholesale Crochet Christmas Sourcing | PEIMI Handmade Factory</title>
@@ -84,14 +84,21 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
   color: #d64a4a !important;
   font-weight: bold !important;
 }
-.nav-menu li a::after {
-  content: "▾";
+/* Dropdown trigger arrow - only on PRODUCTS */
+.nav-dropdown-trigger::after {
+  content: "鈻?;
   margin-left: 5px;
   font-size: 8px;
   vertical-align: middle;
   opacity: 0.5;
 }
-.nav-menu li a.nav-btn::after, .dropdown li a::after { content: none; }
+/* Red-bold highlight for Christmas Specials */
+#nav .nav-highlight {
+  color: #d64a4a !important;
+  font-weight: bold !important;
+}
+
+
 
 .nav-btn{background:var(--gold);color:var(--white);padding:10px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:700;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(176,141,87,0.25);}
 .nav-btn:hover{background:#9a7a48;box-shadow:0 6px 18px rgba(176,141,87,0.35);transform:translateY(-1px);}
@@ -128,9 +135,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
     max-height: 400px;
     padding: 10px 0;
     margin-top: 10px;
-  }
-  .nav-menu li a::after { float: right; }
-  .nav-item.active > a::after { content: "▴"; }
+  } .nav-item.active > a::after { content: "▴"; }
 }
 
 /* ===== CHRISTMAS PAGE SPECIFIC ===== */
@@ -175,7 +180,7 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
   <ul class="nav-menu" id="navMenu">
     <li><a href="index.html">HOME</a></li>
     <li class="nav-item">
-      <a href="index.html#products">PRODUCTS</a>
+      <a href="index.html#products" class="nav-dropdown-trigger">PRODUCTS</a>
       <ul class="dropdown">
         <li><a href="bags.html">Crochet Bags</a></li>
         <li><a href="bouquets.html">Handmade Bouquets</a></li>
