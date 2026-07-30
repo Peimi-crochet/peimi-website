@@ -16,7 +16,17 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .logo{font-size:22px;letter-spacing:3px;font-weight:800;color:var(--white);text-decoration:none;text-transform:uppercase;}
 .logo em{color:var(--gold);font-style:normal;}
 .nav-menu{display:flex;align-items:center;gap:36px;list-style:none;}
-.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;}
+/* RADICAL RESET FOR NAVIGATION */
+.nav-menu, .nav-menu ul, .nav-menu li { list-style: none !important; margin: 0; padding: 0; }
+
+.nav-menu a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-weight:500;transition:all 0.3s ease;}
+.nav-menu a:hover{color:var(--gold);}
+
+/* SPECIFIC FOR CHRISTMAS SPECIALS */
+.nav-menu li a.nav-highlight {
+  color: #d64a4a !important;
+  font-weight: bold !important;
+}
 .nav-item { position: relative; }
 .dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); min-width: 220px; border: 1px solid rgba(176,141,87,0.3); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; list-style: none; padding: 10px 0; z-index: 1001; }
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -77,7 +87,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
         <li><a href="bags.html">Crochet Bags</a></li>
         <li><a href="bouquets.html">Handmade Bouquets</a></li>
         <li><a href="accessories.html">KEYCHAINS & CUSTOM CHARMS</a></li>
-        <li><a href="christmas.html" style="color:#d64a4a;">Christmas Specials</a></li>
+        <li><a href="christmas.html" class="nav-highlight">Christmas Specials</a></li>
         <li><a href="index.html#products">View All</a></li>
       </ul>
     </li>
