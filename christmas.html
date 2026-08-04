@@ -132,9 +132,9 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 }
 
 /* ===== CHRISTMAS PAGE SPECIFIC ===== */
-.christmas-hero { padding: 160px 60px 80px; background: #2c0a0a; color: #fff; text-align: center; background: linear-gradient(rgba(44,10,10,0.8), rgba(44,10,10,0.8)), url('https://raw.githubusercontent.com/Peimi-crochet/peimi-website/main/hero.avif') center/cover; }
-.christmas-hero h1 { font-family: 'Playfair Display', serif; font-size: 56px; color: var(--gold); margin-bottom: 20px; }
-.christmas-hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; }
+.christmas-hero { padding: 160px 60px 80px; position: relative; overflow: hidden; color: #fff; text-align: center; }
+.christmas-hero h1 { font-family: 'Playfair Display', serif; font-size: 56px; color: var(--gold); margin-bottom: 20px; position: relative; z-index: 2; }
+.christmas-hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
 
 .products-section{ padding:120px 60px; background:var(--cream); }
 .section-inner{max-width:1240px;margin:0 auto;}
@@ -182,7 +182,11 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
 </nav>
 
 <section class="christmas-hero">
-  <div style="font-size:12px; letter-spacing:3px; color:var(--gold); margin-bottom:15px; text-transform:uppercase;">Holiday Sourcing 2026</div>
+  <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <source src="https://sc02.alicdn.com/kf/H87c2c970365942a58cac53574e9085b0J.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute;inset:0;background:rgba(19,5,5,0.7);z-index:1;"></div>
+  <div style="font-size:12px; letter-spacing:3px; color:var(--gold); margin-bottom:15px; text-transform:uppercase; position:relative; z-index:2;">Holiday Sourcing 2026</div>
   <h1>Wholesale Crochet Christmas</h1>
   <p>Premium handcrafted Christmas ornaments and festive amigurumi. Direct from our factory, ensuring the warmth of artisanal soul for your holiday retail inventory.</p>
 </section>
