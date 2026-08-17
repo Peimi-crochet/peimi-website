@@ -61,9 +61,10 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown li a { padding: 12px 20px; display: block; font-size: 11px; color: rgba(255,255,255,0.7) !important; }
 
-.category-hero{position:relative;min-height:620px;padding:150px 60px 90px;color:#fff;text-align:center;overflow:hidden;background:var(--dark);display:flex;align-items:center;justify-content:center;}
-.category-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,14,8,.9),rgba(18,14,8,.58) 48%,rgba(18,14,8,.9)),url('assets/emotional-support/emo_1.jpg') left center/50% 100% no-repeat,url('assets/emotional-support/holiday_1.jpg') right center/50% 100% no-repeat;}
-.category-hero .section-inner{position:relative;z-index:1;max-width:920px;}
+.category-hero{position:relative;min-height:620px;padding:150px 60px 90px;color:#fff;text-align:center;overflow:hidden;background:var(--dark) url('assets/emotional-support/emo_1.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;}
+.category-hero::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,14,8,.9),rgba(18,14,8,.52) 48%,rgba(18,14,8,.88));pointer-events:none;}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;z-index:0;}
+.category-hero .section-inner{position:relative;z-index:2;max-width:920px;}
 .category-hero .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#ead2a8;margin-bottom:18px;}
 .category-hero h1{font-family:'Playfair Display',serif;font-size:58px;line-height:1.08;color:#fff;margin-bottom:24px;}
 .category-hero .hero-text{font-size:16px;color:rgba(255,255,255,.82);max-width:780px;margin:0 auto;line-height:1.8;text-align:center;}
@@ -132,6 +133,9 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
 </nav>
 
 <section class="category-hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/emotional-support/emo_1.jpg" aria-hidden="true">
+    <source src="peimi_reels_soul_attraction_0513.mp4" type="video/mp4">
+  </video>
   <div class="section-inner">
     <div class="eyebrow">Wholesale Comfort Gifts · 2026 Collection</div>
     <h1>Emotional Support Crochet &amp; Comfort Decor</h1>
