@@ -1,5 +1,5 @@
 (() => {
-  const PAGE_SIZE = 12;
+  const PAGE_SIZE = 16;
   const grid = document.querySelector('.products-grid');
   if (!grid) return;
 
