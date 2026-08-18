@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -99,6 +99,14 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
   display:block;transition:transform .6s ease;
 }
 .product-card:hover .prod-img img{transform:scale(1.08);}
+.prod-img .model-hover{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;padding:0;mix-blend-mode:normal;filter:none;
+  opacity:0;transition:opacity .45s ease,transform .6s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .prod-img:hover .model-hover{opacity:1;}
+}
 .prod-body{padding:20px;display:flex;flex-direction:column;flex:1;}
 .prod-name{font-family:'Playfair Display',serif;font-size:18px;color:#2C1F12;line-height:1.2;margin-bottom:12px;}
 .prod-desc{font-size:12px;color:#8C7A68;line-height:1.5;margin-bottom:15px;flex:1;}
@@ -476,198 +484,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
         <a href="https://wa.me/8615089572877?text=Inquiry: Tulip Garden Crochet Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
       </div>
     </div>
-  
-    <!-- Item 21 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01t5cbKU2BldWuz4e75_!!2212825188379-0-cib.jpg" alt="Handcrafted Shell Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Shell Tote</h3>
-        <p class="prod-desc">Trendy handmade cotton shell bag. Perfect for summer beach collections and boutique retailers.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Shell Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 22 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01GUiql02BldQo4kZgY_!!2212825188379-0-cib.jpg" alt="Santa Holiday Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Santa Holiday Bag</h3>
-        <p class="prod-desc">Festive Christmas themed crossbody bag. Meticulously stitched for the 2026 holiday season.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Process</span><span class="spec-value">100% Handmade</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Santa Holiday Bag" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 23 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01BhDYNy2BldhBQJspF_!!2212825188379-0-cib.jpg" alt="Handmade Cosmetic Pouch"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Makeup Pouch</h3>
-        <p class="prod-desc">Sophisticated woven structure for beauty essentials. Export-grade quality for global retailers.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knotted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Makeup Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 24 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01NlpZ1N2BldbxzjtVs_!!2212825188379-0-cib.jpg" alt="Colorful Chain Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Chain Tote</h3>
-        <p class="prod-desc">Vibrant celebration of heritage colors. High-perceived-value piece for ethical boutique collections.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Process</span><span class="spec-value">Hand-Knitted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Chain Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 25 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01jsMmK02BldarZcGYZ_!!2212825188379-0-cib.jpg" alt="Contrast Weave Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Contrast Weave Tote</h3>
-        <p class="prod-desc">Modern color-block design handcrafted over 25 hours. A highlight for urban retail displays.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Contrast Weave Tote" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 26 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01Yp5uwo2BldY4rCn7f_!!2212825188379-0-cib.jpg" alt="Tassel Boho Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Boho Tassel Crossbody</h3>
-        <p class="prod-desc">Relaxed bohemian aesthetic with durable hand-knotted tassels. Designed for high-volume seasonal retail.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Artisan Woven</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Boho Tassel Crossbody" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 27 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01mznKPW2BldW4vJjjm_!!2212825188379-0-cib.jpg" alt="Signature Underarm Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Signature Woven Pouch</h3>
-        <p class="prod-desc">Chic handcrafted underarm bag for urban essentials. 100% handmade soul for global markets.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Signature Woven Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 28 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01laAor52BldUQi7U3Z_!!2212825188379-0-cib.jpg" alt="Masterpiece Underarm Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Underarm Bag</h3>
-        <p class="prod-desc">Compact, practical, and full of character. Woven with heritage techniques for modern retailers.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Stitched</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Underarm Bag" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 29 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01pPnO0Q2BldSTJnnSd_!!2212825188379-0-cib.jpg" alt="Creative Carrot Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Creative Carrot Pouch</h3>
-        <p class="prod-desc">Whimsical handcrafted design for playful retail collections. 100% hand-knotted by village artisans.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Crocheted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Creative Carrot Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 30 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01fJqaKd2BldS9cJvp7_!!2212825188379-0-cib.jpg" alt="Snow White Pearl Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Pearl Clutch</h3>
-        <p class="prod-desc">Elegant blend of crochet art and pearl chain details. A premium highlight for boutique evening wear collections.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knotted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Pearl Clutch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 31 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN01SJ7oOG2BldRuTFaZG_!!2212825188379-0-cib.jpg" alt="Cactus Drawstring Bag"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Cactus Pouch</h3>
-        <p class="prod-desc">Creative drawstring bag featuring cactus design. Capturing artisanal soul for specialized gift retailers.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Cactus Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
-    
-    <!-- Item 32 -->
-    <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://s.alicdn.com/@sc04/img/ibank/O1CN016X6jDJ2Bldb6T0hR4_!!2212825188379-0-cib.jpg" alt="Mini Accessory Pouch"></div>
-      <div class="prod-body">
-        <h3 class="prod-name">Artisan Mini Pouch</h3>
-        <p class="prod-desc">Adorable hand-crocheted mini pouch for accessories. Meticulously stitched export quality.</p>
-        <div class="prod-specs">
-          <div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div>
-          <div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div>
-          <div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Organic Cotton</span></div>
-          <div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Stitched</span></div>
-        </div>
-        <a href="https://wa.me/8615089572877?text=Inquiry: Artisan Mini Pouch" class="prod-link" target="_blank">Inquire via WhatsApp</a>
-      </div>
-    </div>
+
     </div></div>
 </section>
 
@@ -675,6 +492,19 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
   漏 2026 PEIMI —Yangjiang Peimi Industrial &amp; Trading Co., Ltd. All rights reserved.
 </footer>
 
+<script>
+document.querySelectorAll('.prod-img > img:first-child').forEach((image) => {
+  const match = image.getAttribute('src')?.match(/assets\/bags\/bag_(\d+)\.jpg$/);
+  if (!match) return;
+  const model = document.createElement('img');
+  model.className = 'model-hover';
+  model.src = `assets/bags/model/bag_${match[1]}_model.webp`;
+  model.alt = `${image.alt} shown on model`;
+  model.loading = 'lazy';
+  model.setAttribute('aria-hidden', 'true');
+  image.parentElement.appendChild(model);
+});
+</script>
 <script src="product-pagination.js?v=2" defer></script>
 </body>
 </html>
