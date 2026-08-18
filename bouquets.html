@@ -39,7 +39,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 
 .product-card{background:#FAF6F0;overflow:hidden;transition:all .35s ease;display:flex;flex-direction:column;border:1px solid var(--border);}
 .product-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(28,24,18,0.12);}
-.prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#F5EFE6;display:flex;align-items:center;justify-content:center;}
+.prod-img{width:100%;aspect-ratio:1;overflow:hidden;background:#F5EFE6;display:flex;align-items:center;justify-content:center;position:relative;}
 .prod-img img{
   width:100%;height:100%;object-fit:contain;
   padding:5px;
@@ -48,6 +48,8 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
   display:block;transition:transform .6s ease;
 }
 .product-card:hover .prod-img img{transform:scale(1.08);}
+.prod-img .scene-hover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;padding:0;mix-blend-mode:normal;filter:none;opacity:0;transition:opacity .45s ease,transform .6s ease;}
+@media (hover:hover) and (pointer:fine){.prod-img:hover .scene-hover{opacity:1;}}
 .prod-body{padding:20px;display:flex;flex-direction:column;flex:1;}
 .prod-name{font-family:'Playfair Display',serif;font-size:18px;color:#2C1F12;line-height:1.2;margin-bottom:12px;}
 .prod-desc{font-size:12px;color:#8C7A68;line-height:1.5;margin-bottom:15px;flex:1;}
@@ -136,7 +138,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     <div class="products-grid">
     <!-- NEW ARRIVAL 1: Sunshine Harvest -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hc91d7e31f04c47aa8df4d1de80c54dfdI.jpg" alt="Sunshine Harvest Mixed Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
+      <div class="prod-img"><img loading="lazy" src="assets/bouquets/bouquet_01.jpg" alt="Sunshine Harvest Mixed Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
       <div class="prod-body">
         <h3 class="prod-name">Sunshine Harvest Mixed Bouquet</h3>
         <p class="prod-desc">A radiant symphony of handmade sunflowers and velvety roses. Wrapped in vibrant orange tones, this artisanal bouquet captures the warmth of a perfect harvest day.</p>
@@ -151,7 +153,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- NEW ARRIVAL 2: Giant Sunflower -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/H9c3c7b14fcbb469ea87f149b1b7123bdt.jpg" alt="Giant Sunflower Fields Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
+      <div class="prod-img"><img loading="lazy" src="assets/bouquets/bouquet_02.jpg" alt="Giant Sunflower Fields Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
       <div class="prod-body">
         <h3 class="prod-name">Giant Sunflower Fields Bouquet</h3>
         <p class="prod-desc">Experience the abundance of summer with this lush, hand-knitted sunflower cluster. A bold centerpiece designed for high-end boutique decor and heartfelt gifts.</p>
@@ -166,7 +168,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- NEW ARRIVAL 3: Pastel Dream -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hde6e5da269ee42debee4644bcfd95366m.jpg" alt="Pastel Dream Artisan Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
+      <div class="prod-img"><img loading="lazy" src="assets/bouquets/bouquet_03.jpg" alt="Pastel Dream Artisan Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
       <div class="prod-body">
         <h3 class="prod-name">Pastel Dream Artisan Bouquet</h3>
         <p class="prod-desc">A serene fusion of soft pink lilies and lavender sprigs. Handcrafted with precision to bring a delicate, romantic aesthetic to sustainable event styling.</p>
@@ -181,7 +183,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- NEW ARRIVAL 4: Academic Excellence -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hae12738b4e7b42868b8c6f5851832b14U.jpg" alt="2026 Academic Excellence Bear Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
+      <div class="prod-img"><img loading="lazy" src="assets/bouquets/bouquet_04.jpg" alt="2026 Academic Excellence Bear Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
       <div class="prod-body">
         <h3 class="prod-name">2026 Academic Excellence Bear Bouquet</h3>
         <p class="prod-desc">Celebrate academic milestones with our signature graduation bear bouquet. Featuring handcrafted amigurumi scholars amidst artisan-knitted blooms—a cherished keepsake for Class of 2026.</p>
@@ -196,7 +198,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- NEW ARRIVAL 5: Blushing Spring -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/H9f3bd829890a4d1e99bb309c7d7121d8C.jpg" alt="Blushing Spring Tulip Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
+      <div class="prod-img"><img loading="lazy" src="assets/bouquets/bouquet_05.jpg" alt="Blushing Spring Tulip Bouquet" style="mix-blend-mode: multiply; padding: 25px;"></div>
       <div class="prod-body">
         <h3 class="prod-name">Blushing Spring Tulip Bouquet</h3>
         <p class="prod-desc">Elegant pink tulips meticulously stitched to symbolize the first breath of spring. A timeless gift of everlasting beauty, perfect for Mother’s Day and anniversaries.</p>
@@ -211,7 +213,7 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
     </div>
     <!-- NEW ARRIVAL 6: Purple Whisper -->
     <div class="product-card">
-      <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/Hed4fd38ebd184def95149e1eb69dfe32p.jpg" alt="Purple Whisper Floral Arrangement" style="mix-blend-mode: multiply; padding: 25px;"></div>
+      <div class="prod-img"><img loading="lazy" src="assets/bouquets/bouquet_06.jpg" alt="Purple Whisper Floral Arrangement" style="mix-blend-mode: multiply; padding: 25px;"></div>
       <div class="prod-body">
         <h3 class="prod-name">Purple Whisper Floral Arrangement</h3>
         <p class="prod-desc">A sophisticated blend of deep purple tulips and delicate white daisies. Hand-crocheted for a premium, poetic finish that adds a touch of mystery to any space.</p>
@@ -640,6 +642,17 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
 </section>
 <footer>© 2026 PEIMI — Yangjiang Peimi Industrial &amp; Trading Co., Ltd. All rights reserved.</footer>
 
+<script>
+document.querySelectorAll('.prod-img > img:first-child').forEach((image,index)=>{
+  const scene=document.createElement('img');
+  scene.className='scene-hover';
+  scene.src=`assets/bouquets/scene/bouquet_${String(index+1).padStart(2,'0')}_scene.webp`;
+  scene.alt=`${image.alt} in lifestyle setting`;
+  scene.loading='lazy';
+  scene.setAttribute('aria-hidden','true');
+  image.parentElement.appendChild(scene);
+});
+</script>
 <script src="product-pagination.js?v=2" defer></script>
 </body>
 </html>
