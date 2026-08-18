@@ -146,8 +146,10 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);li
 
 .product-card{ background:var(--white); border:1px solid var(--border); transition:all .4s ease; display:flex; flex-direction:column; }
 .product-card:hover{ transform:translateY(-10px); box-shadow:0 30px 60px rgba(0,0,0,0.1); }
-.prod-img{ background:#F5EFE6; aspect-ratio:1; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.prod-img{ background:#F5EFE6; aspect-ratio:1; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
 .prod-img img{ width:100%; height:100%; object-fit:contain; padding:10px; mix-blend-mode:multiply; filter:contrast(1.05); transition:transform .6s; }
+.prod-img .scene-hover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;padding:0;mix-blend-mode:normal;filter:none;opacity:0;transition:opacity .45s ease,transform .6s ease;}
+@media (hover:hover) and (pointer:fine){.prod-img:hover .scene-hover{opacity:1;}}
 .product-card:hover .prod-img img{ transform:scale(1.08); }
 .prod-body{ padding:30px; flex:1; display:flex; flex-direction:column; }
 .prod-name{ font-family:'Playfair Display',serif; font-size:20px; margin-bottom:12px; color:var(--dark); }
@@ -211,7 +213,7 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
 
       <div class="product-card"><div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_11.jpg?v=178429" alt="Sweet Candy Cane Charm"></div><div class="prod-body"><h3 class="prod-name">Sweet Candy Cane Charm</h3><p class="prod-desc">Classic red and white candy canes, hand-knitted for a soft holiday experience.</p><div class="prod-specs"><div class="spec-item"><span class="spec-label">MOQ</span><span class="spec-value">200 PCS</span></div><div class="spec-item"><span class="spec-label">Lead Time</span><span class="spec-value">15-30 Days</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Milk Cotton</span></div><div class="spec-item"><span class="spec-label">Craft</span><span class="spec-value">Hand-Knitted</span></div></div><a href="https://wa.me/8615089572877" class="prod-link" target="_blank">Inquire via WhatsApp</a></div></div>
       <div class="product-card">
-        <div class="prod-img"><img loading="lazy" src="https://sc02.alicdn.com/kf/A8b01b2fee42c4272a7a8920ad7a9e2faw.png" alt="Handcrafted Gingerbread Man"></div>
+        <div class="prod-img"><img loading="lazy" src="assets/christmas/xmas_13.png" alt="Handcrafted Gingerbread Man"></div>
         <div class="prod-body">
           <h3 class="prod-name">Handcrafted Gingerbread Man</h3>
           <p class="prod-desc">Sweet and durable hand-knitted gingerbread characters. Export-grade quality for ethical toy retailers and holiday boutiques.</p>
@@ -285,5 +287,15 @@ footer{ background:var(--dark); color:rgba(255,255,255,0.3); padding:80px 60px; 
 
 
 <script src="product-pagination.js?v=2" defer></script>
+<script>
+document.querySelectorAll('.prod-img > img:first-child').forEach((image,index)=>{
+  const scene=document.createElement('img');
+  scene.className='scene-hover';
+  scene.src=`assets/christmas/scene/xmas_${String(index+1).padStart(2,'0')}_scene.webp`;
+  scene.alt=`${image.alt} in a holiday setting`;
+  scene.loading='lazy'; scene.setAttribute('aria-hidden','true');
+  image.parentElement.appendChild(scene);
+});
+</script>
 </body>
 </html>
