@@ -648,8 +648,8 @@ footer{background:var(--dark);padding:72px 60px 36px; text-align: center; color:
 document.querySelectorAll('.prod-img > img:first-child').forEach((image,index)=>{
   const scene=document.createElement('img');
   scene.className='scene-hover';
-  scene.src=`assets/bouquets/scene/bouquet_${String(index+1).padStart(2,'0')}_scene.webp`;
-  scene.alt=`${image.alt} in lifestyle setting`;
+  scene.src=`assets/bouquets/handheld/bouquet_${String(index+1).padStart(2,'0')}_handheld.webp`;
+  scene.alt=`${image.alt} held by a model`;
   scene.loading='lazy';
   scene.setAttribute('aria-hidden','true');
   image.parentElement.appendChild(scene);
