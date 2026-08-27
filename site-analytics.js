@@ -14,4 +14,42 @@
     t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window,document,'clarity','script','y5cvknahr7');
+
+  window.peimiTrack=function(eventName,params){
+    if(typeof window.gtag==='function'){
+      window.gtag('event',eventName,params||{});
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('a[href*="wa.me/"]').forEach(function(link){
+      link.addEventListener('click',function(){
+        window.peimiTrack('whatsapp_click',{
+          page_path:window.location.pathname,
+          link_text:(link.textContent||'').trim(),
+          destination:link.getAttribute('href')||''
+        });
+      });
+    });
+
+    document.querySelectorAll('a[href*="#contact"]').forEach(function(link){
+      link.addEventListener('click',function(){
+        window.peimiTrack('contact_cta_click',{
+          page_path:window.location.pathname,
+          link_text:(link.textContent||'').trim(),
+          destination:link.getAttribute('href')||''
+        });
+      });
+    });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link){
+      link.addEventListener('click',function(){
+        window.peimiTrack('email_click',{
+          page_path:window.location.pathname,
+          link_text:(link.textContent||'').trim(),
+          destination:link.getAttribute('href')||''
+        });
+      });
+    });
+  });
 })();
