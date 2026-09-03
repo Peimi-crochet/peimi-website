@@ -1027,6 +1027,16 @@ footer{background:var(--dark);padding:72px 60px 36px;}
           <label>Estimated Quantity</label>
           <input type="text" name="quantity" placeholder="e.g. 100 pcs, 2 colors">
         </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp / Phone</label>
+            <input type="text" name="whatsapp" placeholder="Optional for faster follow-up">
+          </div>
+          <div class="form-group">
+            <label>Target Delivery Window</label>
+            <input type="text" name="delivery_window" placeholder="e.g. Samples in Oct, bulk in Nov">
+          </div>
+        </div>
         <div class="form-group">
           <label>Additional Requirements</label>
           <textarea name="message" placeholder="Custom color, logo, packaging, delivery timeline..."></textarea>
@@ -1187,6 +1197,8 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
     const sourceCategoryField=quoteForm.querySelector('input[name="source_category"]');
     const pageUrlField=quoteForm.querySelector('input[name="page_url"]');
     const referrerField=quoteForm.querySelector('input[name="referrer_url"]');
+    const whatsappField=quoteForm.querySelector('input[name="whatsapp"]');
+    const deliveryWindowField=quoteForm.querySelector('input[name="delivery_window"]');
     const statusField=document.getElementById('formStatus');
     const submitButton=quoteForm.querySelector('button[type="submit"]');
     const queryCategory=new URLSearchParams(window.location.search).get('category');
@@ -1241,7 +1253,9 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
       trackEvent('quote_form_submit_attempt',{
         page_path:window.location.pathname,
         source_category:sourceCategoryField ? sourceCategoryField.value : '',
-        selected_category:productField ? productField.value : ''
+        selected_category:productField ? productField.value : '',
+        has_whatsapp:whatsappField && whatsappField.value.trim() ? 'yes' : 'no',
+        has_delivery_window:deliveryWindowField && deliveryWindowField.value.trim() ? 'yes' : 'no'
       });
 
       try{
@@ -1257,7 +1271,10 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
 
         trackEvent('quote_form_submit_success',{
           page_path:window.location.pathname,
-          source_category:sourceCategoryField ? sourceCategoryField.value : ''
+          source_category:sourceCategoryField ? sourceCategoryField.value : '',
+          selected_category:productField ? productField.value : '',
+          has_whatsapp:whatsappField && whatsappField.value.trim() ? 'yes' : 'no',
+          has_delivery_window:deliveryWindowField && deliveryWindowField.value.trim() ? 'yes' : 'no'
         });
         quoteForm.reset();
         if(productField && queryCategory){
@@ -1269,6 +1286,9 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
         trackEvent('quote_form_submit_error',{
           page_path:window.location.pathname,
           source_category:sourceCategoryField ? sourceCategoryField.value : '',
+          selected_category:productField ? productField.value : '',
+          has_whatsapp:whatsappField && whatsappField.value.trim() ? 'yes' : 'no',
+          has_delivery_window:deliveryWindowField && deliveryWindowField.value.trim() ? 'yes' : 'no',
           message:error.message
         });
         setStatus('The form could not be sent right now. Please try the WhatsApp button or email link below.','error');
@@ -1283,4 +1303,3 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
 
 </body>
 </html>
-
