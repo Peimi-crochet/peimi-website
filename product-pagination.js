@@ -8,6 +8,7 @@
 
   const style = document.createElement('style');
   style.textContent = `
+    .products-grid > .product-card[hidden],.products-grid > .series-heading[hidden]{display:none!important}
     .product-pagination{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:42px;flex-wrap:wrap}
     .product-page-btn{min-width:42px;height:42px;padding:0 14px;border:1px solid rgba(140,100,60,.28);background:#faf6f0;color:#3d2e22;font:600 12px Inter,sans-serif;letter-spacing:.5px;cursor:pointer;transition:.25s ease}
     .product-page-btn:hover:not(:disabled),.product-page-btn.active{background:#120e08;border-color:#120e08;color:#fff}
