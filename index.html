@@ -200,12 +200,6 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
   position:absolute;z-index:4;left:50%;bottom:34px;transform:translateX(-50%);
   display:flex;align-items:center;gap:12px;
 }
-.hero-slider-arrow{
-  width:42px;height:42px;border:1px solid rgba(255,255,255,.3);
-  background:rgba(18,14,8,.48);color:#fff;cursor:pointer;font-size:20px;
-  transition:.2s ease;
-}
-.hero-slider-arrow:hover{background:var(--gold);border-color:var(--gold);}
 .hero-slider-dots{display:flex;gap:8px;}
 .hero-slider-dot{
   width:9px;height:9px;padding:0;border:1px solid rgba(255,255,255,.75);
@@ -538,7 +532,6 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 .hero-actions{flex-direction:column;gap:10px;width:100%;}
 .hero-slide{align-items:center;}
 .hero-slider-controls{left:50%;bottom:10px;}
-.hero-slider-arrow{width:38px;height:38px;}
 .hero-slide-factory .hero-left{max-width:100%;}
 .hero-slide-factory .hero-h1{font-size:38px;line-height:1.1;}
   .btn-primary, .btn-outline{width:100%;justify-content:center;padding:14px 20px;}
@@ -668,9 +661,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
     </div>
   </article>
   <div class="hero-slider-controls" aria-label="Homepage highlights">
-    <button class="hero-slider-arrow hero-slider-prev" type="button" aria-label="Previous slide">‹</button>
     <div class="hero-slider-dots"></div>
-    <button class="hero-slider-arrow hero-slider-next" type="button" aria-label="Next slide">›</button>
   </div>
 </section>
 
@@ -1407,9 +1398,7 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
     const hero = document.getElementById('hero');
     const slides = [...hero.querySelectorAll('.hero-slide')];
     const dotsWrap = hero.querySelector('.hero-slider-dots');
-    const previous = hero.querySelector('.hero-slider-prev');
-    const next = hero.querySelector('.hero-slider-next');
-    if (slides.length < 2 || !dotsWrap || !previous || !next) return;
+    if (slides.length < 2 || !dotsWrap) return;
 
     let activeIndex = 0;
     let timer;
@@ -1438,8 +1427,6 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
       if (userAction) restart();
     };
 
-    previous.addEventListener('click', () => show(activeIndex - 1, true));
-    next.addEventListener('click', () => show(activeIndex + 1, true));
     hero.addEventListener('mouseenter', () => clearInterval(timer));
     hero.addEventListener('mouseleave', restart);
     restart();
