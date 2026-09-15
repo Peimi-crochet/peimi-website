@@ -174,6 +174,36 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
   background:url('hero.avif') center/cover no-repeat;
   z-index:0;
 }
+.hero-slide{
+  position:absolute;inset:0;display:flex;align-items:center;
+  opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s ease;
+}
+.hero-slide.active{opacity:1;visibility:visible;z-index:1;}
+.hero-slide .hero-bg-img{z-index:0;}
+.hero-slide .hero-overlay{z-index:1;}
+.hero-slide-factory .hero-bg-img{
+  background-image:url('assets/factory/real-crochet-factory-floor.jpg');
+  background-position:center 58%;
+}
+.hero-slide-factory .hero-left{max-width:900px;}
+.hero-slide-factory .hero-h1{max-width:780px;font-size:64px;line-height:.98;}
+.hero-slide-factory .hero-desc{max-width:600px;}
+.hero-slider-controls{
+  position:absolute;z-index:4;left:60px;bottom:34px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-slider-arrow{
+  width:42px;height:42px;border:1px solid rgba(255,255,255,.3);
+  background:rgba(18,14,8,.48);color:#fff;cursor:pointer;font-size:20px;
+  transition:.2s ease;
+}
+.hero-slider-arrow:hover{background:var(--gold);border-color:var(--gold);}
+.hero-slider-dots{display:flex;gap:8px;}
+.hero-slider-dot{
+  width:9px;height:9px;padding:0;border:1px solid rgba(255,255,255,.75);
+  border-radius:50%;background:transparent;cursor:pointer;
+}
+.hero-slider-dot.active{background:var(--gold);border-color:var(--gold);}
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
   background:linear-gradient(to right,rgba(18,14,8,0.92) 0%,rgba(18,14,8,0.65) 50%,rgba(18,14,8,0.2) 100%);
@@ -487,7 +517,7 @@ footer{background:var(--dark);padding:72px 60px 36px;}
     margin-top: 10px;
   } .nav-item.active > a::after { content: "▴"; }
   
-  #hero{min-height:auto;padding-bottom:60px;flex-direction:column;}
+#hero{min-height:100svh;padding-bottom:0;flex-direction:column;}
   .hero-h1{font-size:38px;letter-spacing:-1px;line-height:1.1;}
   .hero-left{padding:60px 20px;max-width:100%;}
   .hero-right{display:none !important;}
@@ -497,7 +527,12 @@ footer{background:var(--dark);padding:72px 60px 36px;}
   .hero-stat{padding:0;margin:0;border:none;}
   .hero-stat-n{font-size:28px;}
   .hero-pill{font-size:10px;padding:6px 12px;}
-  .hero-actions{flex-direction:column;gap:10px;width:100%;}
+.hero-actions{flex-direction:column;gap:10px;width:100%;}
+.hero-slide{align-items:center;}
+.hero-slider-controls{left:20px;bottom:22px;}
+.hero-slider-arrow{width:38px;height:38px;}
+.hero-slide-factory .hero-left{max-width:100%;}
+.hero-slide-factory .hero-h1{font-size:38px;line-height:1.1;}
   .btn-primary, .btn-outline{width:100%;justify-content:center;padding:14px 20px;}
   
   .trust-bar{padding:60px 20px;}
@@ -551,26 +586,47 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-img"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-left">
-    <div class="hero-tag">Factory-Direct OEM/ODM Crochet Supply</div>
-    <h1 class="hero-h1">Wholesale Crochet<br>Collections for<br><em>Retail Brands &amp; Gifts.</em></h1>
-    <p class="hero-desc">Factory-direct custom bags, bouquets, amigurumi, emotional support gifts, micro accessories and seasonal decor — all from one crochet manufacturer.</p>
-    <div class="hero-pills">
-      <span class="hero-pill">MOQ: <strong>200 pcs</strong></span>
-      <span class="hero-pill">Flexible <strong>Sampling</strong></span>
-      <span class="hero-pill">Custom <strong>Packaging</strong></span>
-      <span class="hero-pill">Multi-Category <strong>OEM/ODM</strong></span>
+  <article class="hero-slide active" aria-hidden="false">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-left">
+      <div class="hero-tag">Factory-Direct OEM/ODM Crochet Supply</div>
+      <h1 class="hero-h1">Wholesale Crochet<br>Collections for<br><em>Retail Brands &amp; Gifts.</em></h1>
+      <p class="hero-desc">Factory-direct custom bags, bouquets, amigurumi, emotional support gifts, micro accessories and seasonal decor — all from one crochet manufacturer.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">MOQ: <strong>200 pcs</strong></span>
+        <span class="hero-pill">Flexible <strong>Sampling</strong></span>
+        <span class="hero-pill">Custom <strong>Packaging</strong></span>
+        <span class="hero-pill">Multi-Category <strong>OEM/ODM</strong></span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">→ Request Wholesale Quote</a>
+        <a href="https://wa.me/8615089572877" target="_blank" class="btn-outline">WhatsApp Us Now</a>
+      </div>
     </div>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">→ Request Wholesale Quote</a>
-      <a href="https://wa.me/8615089572877" target="_blank" class="btn-outline">WhatsApp Us Now</a>
+  </article>
+  <article class="hero-slide hero-slide-factory" aria-hidden="true">
+    <div class="hero-bg-img" role="img" aria-label="PEIMI real crochet factory production floor"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-left">
+      <div class="hero-tag">Inside Our Real Crochet Factory</div>
+      <h2 class="hero-h1">Real Crochet Factory.<br><em>Custom Made for Your Brand.</em></h2>
+      <p class="hero-desc">OEM &amp; ODM crochet development, flexible customization and reliable bulk production for global retailers, gift brands and sourcing teams.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">Custom <strong>Design</strong></span>
+        <span class="hero-pill">Private-Label <strong>Packaging</strong></span>
+        <span class="hero-pill">Reliable <strong>Bulk Production</strong></span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start Your Custom Project</a>
+        <a href="#process" class="btn-outline">See Our Process</a>
+      </div>
     </div>
-
-  </div>
-  <div class="hero-right">
-    <img src="hero.avif" alt="PEIMI crochet wholesale collections" fetchpriority="high">
+  </article>
+  <div class="hero-slider-controls" aria-label="Homepage highlights">
+    <button class="hero-slider-arrow hero-slider-prev" type="button" aria-label="Previous slide">‹</button>
+    <div class="hero-slider-dots"></div>
+    <button class="hero-slider-arrow hero-slider-next" type="button" aria-label="Next slide">›</button>
   </div>
 </section>
 
@@ -1302,5 +1358,48 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
 </script>
 
 
+<script>
+  (() => {
+    const hero = document.getElementById('hero');
+    const slides = [...hero.querySelectorAll('.hero-slide')];
+    const dotsWrap = hero.querySelector('.hero-slider-dots');
+    const previous = hero.querySelector('.hero-slider-prev');
+    const next = hero.querySelector('.hero-slider-next');
+    if (slides.length < 2 || !dotsWrap || !previous || !next) return;
+
+    let activeIndex = 0;
+    let timer;
+    const dots = slides.map((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `hero-slider-dot${index === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Show slide ${index + 1}`);
+      dot.addEventListener('click', () => show(index, true));
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    const restart = () => {
+      clearInterval(timer);
+      timer = setInterval(() => show(activeIndex + 1), 7000);
+    };
+    const show = (index, userAction = false) => {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === activeIndex));
+      if (userAction) restart();
+    };
+
+    previous.addEventListener('click', () => show(activeIndex - 1, true));
+    next.addEventListener('click', () => show(activeIndex + 1, true));
+    hero.addEventListener('mouseenter', () => clearInterval(timer));
+    hero.addEventListener('mouseleave', restart);
+    restart();
+  })();
+</script>
 </body>
 </html>
