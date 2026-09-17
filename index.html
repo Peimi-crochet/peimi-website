@@ -1304,6 +1304,10 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
     const statusField=document.getElementById('formStatus');
     const submitButton=quoteForm.querySelector('button[type="submit"]');
     const queryCategory=new URLSearchParams(window.location.search).get('category');
+    const categoryAliases={
+      'Custom Amigurumi':'Crochet Dolls / Amigurumi'
+    };
+    const normalizedQueryCategory=queryCategory ? (categoryAliases[queryCategory] || queryCategory) : '';
     const originalButtonText=submitButton.textContent;
 
     const trackEvent=(eventName,params={})=>{
@@ -1330,12 +1334,12 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
         referrerField.value=document.referrer || '';
       }
       if(sourceCategoryField){
-        sourceCategoryField.value=productField && productField.value ? productField.value : (queryCategory || '');
+        sourceCategoryField.value=productField && productField.value ? productField.value : normalizedQueryCategory;
       }
     };
 
-    if(productField && queryCategory){
-      const matchingOption=[...productField.options].find(option=>option.value===queryCategory);
+    if(productField && normalizedQueryCategory){
+      const matchingOption=[...productField.options].find(option=>option.value===normalizedQueryCategory);
       if(matchingOption){
         productField.value=matchingOption.value;
       }
@@ -1379,8 +1383,8 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
           has_delivery_window:deliveryWindowField && deliveryWindowField.value.trim() ? 'yes' : 'no'
         });
         quoteForm.reset();
-        if(productField && queryCategory){
-          productField.value=queryCategory;
+        if(productField && normalizedQueryCategory){
+          productField.value=normalizedQueryCategory;
         }
         syncLeadSource();
         setStatus('Thanks. Your inquiry was sent successfully. Please check email or WhatsApp for follow-up.','success');
