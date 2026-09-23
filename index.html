@@ -300,6 +300,24 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .trust-n{font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);}
 .trust-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:8px;}
 
+/* ===== B2B BUYER ADVANTAGES ===== */
+.buyer-advantages{background:#FAF6F0;padding:96px 60px;}
+.buyer-advantages-head{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:end;margin-bottom:48px;}
+.buyer-advantages-copy{font-size:14px;color:#8C7A68;line-height:1.85;max-width:520px;justify-self:end;}
+.buyer-advantage-featured{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.buyer-feature{min-height:270px;padding:34px;background:#F1E4D8;border:1px solid rgba(176,141,87,.22);display:flex;flex-direction:column;}
+.buyer-feature:nth-child(2){background:#F3EBDD;}
+.buyer-feature:nth-child(3){background:#E9E8D9;}
+.buyer-kicker{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9C7440;margin-bottom:auto;}
+.buyer-feature h3{font-family:'Playfair Display',serif;font-size:28px;line-height:1.15;color:#2C1F12;margin:38px 0 12px;}
+.buyer-feature p{font-size:13px;line-height:1.75;color:#6F5D4D;}
+.buyer-advantage-details{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:20px;}
+.buyer-detail{padding:28px 22px;border-right:1px solid var(--border);}
+.buyer-detail:last-child{border-right:none;}
+.buyer-detail strong{display:block;font-family:'Playfair Display',serif;font-size:18px;line-height:1.25;color:#2C1F12;margin-bottom:8px;}
+.buyer-detail span{display:block;font-size:12px;line-height:1.65;color:#8C7A68;}
+.buyer-advantages-note{margin-top:18px;font-size:11px;line-height:1.7;color:#9A8877;}
+
 /* ===== PRODUCTS ===== */
 .products-section{background:#F5EFE6;padding:96px 60px;}
 .products-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;}
@@ -492,6 +510,9 @@ footer{background:var(--dark);padding:72px 60px 36px;}
   .trust-bar{padding:56px 30px;}
   footer{padding:72px 30px 36px;}
   .hero-slide:first-child .hero-h1{font-size:74px;}
+  .buyer-advantages{padding:80px 30px;}
+  .buyer-advantage-details{grid-template-columns:repeat(2,1fr);}
+  .buyer-detail{border-bottom:1px solid var(--border);}
 }
 
 @media (max-width: 768px) {
@@ -550,6 +571,15 @@ footer{background:var(--dark);padding:72px 60px 36px;}
   .trust-bar{padding:60px 20px;}
   .trust-inner{grid-template-columns:1fr;gap:30px;}
   .trust-item{padding:0;border:none;text-align:center;}
+
+  .buyer-advantages{padding:72px 20px;}
+  .buyer-advantages-head{grid-template-columns:1fr;gap:20px;margin-bottom:32px;}
+  .buyer-advantages-copy{justify-self:start;}
+  .buyer-advantage-featured{grid-template-columns:1fr;}
+  .buyer-feature{min-height:230px;padding:28px;}
+  .buyer-feature h3{font-size:25px;}
+  .buyer-advantage-details{grid-template-columns:1fr;}
+  .buyer-detail{border-right:none;}
   
   .marquee-inner span{padding:0 15px;font-size:9px;letter-spacing:2px;}
 
@@ -705,6 +735,46 @@ footer{background:var(--dark);padding:72px 60px 36px;}
     </div>
   </div>
 </div>
+
+<!-- B2B BUYER ADVANTAGES -->
+<section class="buyer-advantages" id="wholesale-benefits" aria-labelledby="buyerAdvantagesTitle">
+  <div class="section-inner">
+    <div class="buyer-advantages-head">
+      <div>
+        <div class="section-label">Built for Wholesale Buyers</div>
+        <h2 class="section-title" id="buyerAdvantagesTitle">Flexible Customization.<br>Reliable Global Supply.</h2>
+      </div>
+      <p class="buyer-advantages-copy">From design review and sample approval to packaging and delivery coordination, PEIMI supports retail buyers through a clear OEM/ODM workflow.</p>
+    </div>
+
+    <div class="buyer-advantage-featured">
+      <article class="buyer-feature">
+        <span class="buyer-kicker">Selected Repeat Styles</span>
+        <h3>Stock &amp; Fast Dispatch Support</h3>
+        <p>Ask us to confirm current availability. Qualifying in-stock styles can be prepared for dispatch in 3–5 days after order and packing details are approved.</p>
+      </article>
+      <article class="buyer-feature">
+        <span class="buyer-kicker">Product Development</span>
+        <h3>OEM / ODM Customization</h3>
+        <p>Develop colors, dimensions, materials, labels and retail packaging around your brief, with a sample approved before bulk production.</p>
+      </article>
+      <article class="buyer-feature">
+        <span class="buyer-kicker">Export Coordination</span>
+        <h3>Global Door-to-Door Support</h3>
+        <p>We help coordinate courier, air or sea freight options and export-ready packing based on destination, timing and order volume.</p>
+      </article>
+    </div>
+
+    <div class="buyer-advantage-details" aria-label="Wholesale service highlights">
+      <div class="buyer-detail"><strong>Stock Confirmation</strong><span>Availability checked before quotation for seasonal and repeat programs.</span></div>
+      <div class="buyer-detail"><strong>3–5 Day Dispatch</strong><span>Available only for confirmed in-stock styles with approved order details.</span></div>
+      <div class="buyer-detail"><strong>MOQ From 200</strong><span>Standard starting quantity is 200 pieces per style unless otherwise confirmed.</span></div>
+      <div class="buyer-detail"><strong>Worldwide Shipping</strong><span>Multiple freight methods can be reviewed for your destination and deadline.</span></div>
+      <div class="buyer-detail"><strong>Sample-Led Accuracy</strong><span>Bulk production follows the approved sample, product brief and QC checklist.</span></div>
+    </div>
+    <p class="buyer-advantages-note">Stock, dispatch time and freight availability depend on the selected style, quantity, packaging and destination. Final terms are confirmed in the quotation.</p>
+  </div>
+</section>
 
 <!-- PRODUCTS -->
 <section class="products-section" id="products">
