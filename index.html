@@ -1375,7 +1375,10 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
     const submitButton=quoteForm.querySelector('button[type="submit"]');
     const queryCategory=new URLSearchParams(window.location.search).get('category');
     const categoryAliases={
-      'Custom Amigurumi':'Crochet Dolls / Amigurumi'
+      'Custom Amigurumi':'Crochet Dolls / Amigurumi',
+      'Crochet Keychains and Bag Charms':'Custom Mini Keychains & Charms / Gifts',
+      'Crochet Car Hanging Ornaments':'Car Charms & Mirror Hangings',
+      'Market Hot Crochet Products':'Multiple Categories'
     };
     const normalizedQueryCategory=queryCategory ? (categoryAliases[queryCategory] || queryCategory) : '';
     const originalButtonText=submitButton.textContent;
