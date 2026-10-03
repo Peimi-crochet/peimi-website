@@ -292,13 +292,23 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .section-title{color:#2C1F12;font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;color:#2C1F12;}
 .section-sub{font-size:14px;color:#8C7A68;margin-top:16px;line-height:1.8;max-width:520px;}
 
-/* ===== TRUST BAR ===== */
-.trust-bar{background:var(--dark);padding:56px 60px;}
-.trust-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
-.trust-item{text-align:center;padding:0 16px;border-right:1px solid rgba(255,255,255,0.08);}
-.trust-item:last-child{border-right:none;}
-.trust-n{font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);}
-.trust-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:8px;}
+/* ===== VERIFIED BUYER FEEDBACK ===== */
+.buyer-feedback{background:var(--dark);padding:64px 60px;overflow:hidden;}
+.buyer-feedback-inner{max-width:1240px;margin:0 auto;}
+.buyer-feedback-slide{display:none;grid-template-columns:minmax(260px,.65fr) minmax(0,1.35fr);gap:54px;align-items:center;}
+.buyer-feedback-slide.active{display:grid;animation:feedbackFade .55s ease;}
+.buyer-feedback-kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.buyer-feedback-title{font-family:'Playfair Display',serif;font-size:42px;line-height:1.08;color:var(--white);margin-bottom:20px;}
+.buyer-feedback-quote{font-family:'Playfair Display',serif;font-size:20px;line-height:1.55;font-style:italic;color:rgba(255,255,255,.88);margin-bottom:24px;}
+.buyer-feedback-meta{font-size:10px;line-height:1.6;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.48);}
+.buyer-feedback-frame{height:clamp(310px,34vw,470px);background:#F8F5EF;border:1px solid rgba(176,141,87,.32);box-shadow:0 24px 54px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.buyer-feedback-frame img{width:100%;height:100%;object-fit:contain;display:block;}
+.buyer-feedback-controls{display:flex;align-items:center;gap:16px;margin-top:24px;}
+.buyer-feedback-count{min-width:44px;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.45);}
+.buyer-feedback-dots{display:flex;align-items:center;gap:9px;}
+.buyer-feedback-dot{width:9px;height:9px;padding:0;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:transparent;cursor:pointer;}
+.buyer-feedback-dot.active{background:var(--gold);border-color:var(--gold);}
+@keyframes feedbackFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* ===== B2B BUYER ADVANTAGES ===== */
 .buyer-advantages{background:#FAF6F0;padding:96px 60px;}
@@ -521,7 +531,7 @@ body.modal-open{overflow:hidden;}
   #nav{padding:0 30px;}
   .section{padding:80px 30px;}
   .products-section{padding:80px 30px;}
-  .trust-bar{padding:56px 30px;}
+  .buyer-feedback{padding:56px 30px;}
   footer{padding:72px 30px 36px;}
   .hero-slide:first-child .hero-h1{font-size:74px;}
   .buyer-advantages{padding:80px 30px;}
@@ -582,9 +592,11 @@ body.modal-open{overflow:hidden;}
 .hero-slide-factory .hero-h1{font-size:38px;line-height:1.1;}
   .btn-primary, .btn-outline{width:100%;justify-content:center;padding:14px 20px;}
   
-  .trust-bar{padding:60px 20px;}
-  .trust-inner{grid-template-columns:1fr;gap:30px;}
-  .trust-item{padding:0;border:none;text-align:center;}
+  .buyer-feedback{padding:48px 20px;}
+  .buyer-feedback-slide{grid-template-columns:1fr;gap:28px;}
+  .buyer-feedback-title{font-size:34px;}
+  .buyer-feedback-quote{font-size:18px;}
+  .buyer-feedback-frame{height:auto;aspect-ratio:4/3;}
 
   .buyer-advantages{padding:72px 20px;}
   .buyer-advantages-head{grid-template-columns:1fr;gap:20px;margin-bottom:32px;}
@@ -610,7 +622,7 @@ body.modal-open{overflow:hidden;}
 @media (max-width: 480px) {
   .hero-h1{font-size:38px;}
   .products-grid{grid-template-columns:1fr;}
-  .trust-inner{grid-template-columns:1fr;}
+  .buyer-feedback-title{font-size:30px;}
 }
 </style>
 <body>
@@ -731,27 +743,89 @@ body.modal-open{overflow:hidden;}
   </div>
 </div>
 
-<!-- TRUST -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">
-      <div class="trust-n">6</div>
-      <div class="trust-l">Core Categories</div>
+<!-- VERIFIED BUYER FEEDBACK -->
+<section class="buyer-feedback" id="buyer-feedback" aria-label="Real buyer feedback">
+  <div class="buyer-feedback-inner">
+    <div class="buyer-feedback-slides" aria-live="off">
+      <article class="buyer-feedback-slide active" aria-hidden="false">
+        <div class="buyer-feedback-copy">
+          <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
+          <h2 class="buyer-feedback-title">Custom Bag Development</h2>
+          <p class="buyer-feedback-quote">“Wow, it looks incredible! Thank you for bringing my vision to life.”</p>
+          <div class="buyer-feedback-meta">United States · Custom Crochet Tote · WhatsApp</div>
+        </div>
+        <figure class="buyer-feedback-frame">
+          <img src="assets/reviews/buyer-feedback-custom-tote.jpg" alt="Buyer approving a custom crochet tote sample after reviewing the finished product" width="1285" height="742">
+        </figure>
+      </article>
+
+      <article class="buyer-feedback-slide" aria-hidden="true">
+        <div class="buyer-feedback-copy">
+          <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
+          <h2 class="buyer-feedback-title">Finished Sample Approval</h2>
+          <p class="buyer-feedback-quote">“I really like it. Perfect!”</p>
+          <div class="buyer-feedback-meta">Spain · Crochet Chain Bag · WhatsApp</div>
+        </div>
+        <figure class="buyer-feedback-frame">
+          <img src="assets/reviews/buyer-feedback-chain-bag.png" alt="Buyer approving a finished black crochet chain bag sample" width="1234" height="849" loading="lazy" decoding="async">
+        </figure>
+      </article>
+
+      <article class="buyer-feedback-slide" aria-hidden="true">
+        <div class="buyer-feedback-copy">
+          <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
+          <h2 class="buyer-feedback-title">Custom Amigurumi Details</h2>
+          <p class="buyer-feedback-quote">“You guys do a great job.”</p>
+          <div class="buyer-feedback-meta">United States · Custom Crochet Dolls · WhatsApp</div>
+        </div>
+        <figure class="buyer-feedback-frame">
+          <img src="assets/reviews/buyer-feedback-custom-amigurumi.png" alt="Buyer feedback on customized crochet dolls with hardware accessories" width="1238" height="859" loading="lazy" decoding="async">
+        </figure>
+      </article>
+
+      <article class="buyer-feedback-slide" aria-hidden="true">
+        <div class="buyer-feedback-copy">
+          <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
+          <h2 class="buyer-feedback-title">Pre-Production Sample Check</h2>
+          <p class="buyer-feedback-quote">“It looks good to me, thanks! Let’s continue.”</p>
+          <div class="buyer-feedback-meta">United States · Size &amp; Detail Confirmation · WhatsApp</div>
+        </div>
+        <figure class="buyer-feedback-frame">
+          <img src="assets/reviews/buyer-feedback-sample-approval.png" alt="Buyer approving crochet measurements during pre-production sampling" width="1252" height="861" loading="lazy" decoding="async">
+        </figure>
+      </article>
+
+      <article class="buyer-feedback-slide" aria-hidden="true">
+        <div class="buyer-feedback-copy">
+          <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
+          <h2 class="buyer-feedback-title">Design-to-Sample Accuracy</h2>
+          <p class="buyer-feedback-quote">“Love it so much!”</p>
+          <div class="buyer-feedback-meta">United States · Custom Crochet Clutch · WhatsApp</div>
+        </div>
+        <figure class="buyer-feedback-frame">
+          <img src="assets/reviews/buyer-feedback-custom-clutch.png" alt="Buyer approving a custom crochet clutch made from the supplied design" width="1252" height="862" loading="lazy" decoding="async">
+        </figure>
+      </article>
+
+      <article class="buyer-feedback-slide" aria-hidden="true">
+        <div class="buyer-feedback-copy">
+          <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
+          <h2 class="buyer-feedback-title">Delivered Order Feedback</h2>
+          <p class="buyer-feedback-quote">“I just received my order. I’m really happy—everything is perfect.”</p>
+          <div class="buyer-feedback-meta">France · Repeat Supplier Intent · Translated from French</div>
+        </div>
+        <figure class="buyer-feedback-frame">
+          <img src="assets/reviews/buyer-feedback-delivered-order.png" alt="Buyer confirming receipt of an order and giving positive feedback in French" width="1498" height="724" loading="lazy" decoding="async">
+        </figure>
+      </article>
     </div>
-    <div class="trust-item">
-      <div class="trust-n">200</div>
-      <div class="trust-l">MOQ From</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-n">OEM</div>
-      <div class="trust-l">&amp; ODM Support</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-n">B2B</div>
-      <div class="trust-l">Quote Workflow</div>
+
+    <div class="buyer-feedback-controls" aria-label="Buyer feedback carousel controls">
+      <span class="buyer-feedback-count" aria-hidden="true">1 / 6</span>
+      <div class="buyer-feedback-dots"></div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- B2B BUYER ADVANTAGES -->
 <section class="buyer-advantages" id="wholesale-benefits" aria-labelledby="buyerAdvantagesTitle">
@@ -1617,6 +1691,64 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
       else restart();
     });
     restart();
+  })();
+</script>
+
+<script>
+  (() => {
+    const carousel = document.getElementById('buyer-feedback');
+    if (!carousel) return;
+
+    const slides = [...carousel.querySelectorAll('.buyer-feedback-slide')];
+    const dotsWrap = carousel.querySelector('.buyer-feedback-dots');
+    const count = carousel.querySelector('.buyer-feedback-count');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (slides.length < 2 || !dotsWrap) return;
+
+    let activeIndex = 0;
+    let timer;
+    let touchStartX = 0;
+
+    const dots = slides.map((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `buyer-feedback-dot${index === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Show buyer feedback ${index + 1}`);
+      dot.addEventListener('click', () => show(index, true));
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    const stop = () => clearInterval(timer);
+    const start = () => {
+      stop();
+      if (!reduceMotion && !document.hidden) timer = setInterval(() => show(activeIndex + 1), 6500);
+    };
+    const show = (index, userAction = false) => {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === activeIndex));
+      if (count) count.textContent = `${activeIndex + 1} / ${slides.length}`;
+      if (userAction) start();
+    };
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    carousel.addEventListener('touchstart', event => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', event => {
+      const distance = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(distance) > 50) show(activeIndex + (distance < 0 ? 1 : -1), true);
+    }, { passive: true });
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    start();
   })();
 </script>
 </body>
