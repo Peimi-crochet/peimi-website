@@ -491,14 +491,28 @@ footer{background:var(--dark);padding:72px 60px 36px;}
 .wa-float a{display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#25D366;box-shadow:0 6px 24px rgba(37,211,102,0.35);text-decoration:none;}
 .wa-float svg{width:28px;height:28px;fill:var(--white);}
 
-/* ===== MODAL ===== */
-.modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;}
+/* ===== FIRST-ORDER DISCOUNT MODAL ===== */
+body.modal-open{overflow:hidden;}
+.modal{position:fixed;inset:0;z-index:9999;background:rgba(18,14,8,.72);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s ease;}
 .modal.show{opacity:1;pointer-events:all;}
-.modal-box{background:#FAF6F0;padding:48px;max-width:420px;width:90%;position:relative;text-align:center;}
-.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#8C7A68;}
-.modal-title{font-family:'Playfair Display',serif;font-size:32px;color:#2C1F12;margin-bottom:10px;}
-.modal-sub{font-size:13px;color:#8C7A68;line-height:1.7;margin-bottom:24px;}
-.modal input{width:100%;padding:13px 16px;border:1px solid var(--border);font-family:'Inter',sans-serif;font-size:13px;margin-bottom:12px;outline:none;background:#F5EFE6;}
+.modal-box{background:#FAF6F0;border:1px solid rgba(176,141,87,.4);box-shadow:0 28px 80px rgba(18,14,8,.38);padding:44px 44px 36px;max-width:470px;width:100%;position:relative;text-align:center;transform:translateY(14px) scale(.98);transition:transform .3s ease;}
+.modal.show .modal-box{transform:none;}
+.modal-close{position:absolute;top:13px;right:15px;width:38px;height:38px;border:1px solid rgba(44,31,18,.16);border-radius:50%;background:transparent;font-size:24px;line-height:1;cursor:pointer;color:#6F5E50;}
+.modal-close:hover,.modal-close:focus-visible{background:#2C1F12;color:#fff;outline:none;}
+.modal-kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#9B7542;font-weight:700;margin-bottom:14px;}
+.modal-offer{width:96px;height:96px;border-radius:50%;margin:0 auto 16px;background:#B08D57;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(176,141,87,.28);}
+.modal-offer strong{font-family:'Playfair Display',Georgia,serif;font-size:40px;line-height:.9;}
+.modal-offer span{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-top:7px;}
+.modal-title{font-family:'Playfair Display',Georgia,serif;font-size:34px;line-height:1.12;color:#2C1F12;margin-bottom:10px;}
+.modal-sub{font-size:13px;color:#756354;line-height:1.7;margin:0 auto 22px;max-width:350px;}
+.discount-form input{width:100%;padding:14px 16px;border:1px solid rgba(140,100,60,.24);font-family:'Inter',sans-serif;font-size:13px;margin-bottom:10px;outline:none;background:#fff;color:#2C1F12;}
+.discount-form input:focus{border-color:#B08D57;box-shadow:0 0 0 3px rgba(176,141,87,.12);}
+.discount-form .submit-btn{margin-top:0;}
+.discount-status{min-height:22px;margin-top:12px;font-size:12px;line-height:1.5;color:#756354;}
+.discount-status.is-success{padding:12px;background:#EEF5EC;color:#315D2E;font-weight:600;}
+.discount-status.is-error{color:#8A3A2C;}
+.discount-terms{font-size:10px;line-height:1.5;color:#9A8877;margin-top:13px;}
+@media(max-width:520px){.modal{padding:14px}.modal-box{padding:38px 22px 28px}.modal-offer{width:82px;height:82px}.modal-offer strong{font-size:34px}.modal-title{font-size:29px}}
 
 /* ===== RESPONSIVE ===== */
 .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;}
@@ -1306,6 +1320,90 @@ footer{background:var(--dark);padding:72px 60px 36px;}
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
   </a>
 </div>
+
+<!-- FIRST-ORDER DISCOUNT POPUP -->
+<div class="modal" id="discountModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="discountTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="discountClose" type="button" aria-label="Close first-order discount">&times;</button>
+    <div class="modal-kicker">Welcome to PEIMI Wholesale</div>
+    <div class="modal-offer" aria-hidden="true"><strong>10%</strong><span>Off</span></div>
+    <h2 class="modal-title" id="discountTitle">Save on Your First Wholesale Order</h2>
+    <p class="modal-sub">Enter your business email to unlock the PEIMI first-order offer and receive new crochet collection updates.</p>
+    <form class="discount-form" id="discountForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="d8a9d4e9-e014-4ee9-8d2c-97839fc4f756">
+      <input type="hidden" name="subject" value="New 10% Discount Lead from peimicrochet.com">
+      <input type="hidden" name="source" value="Homepage first-order discount popup">
+      <input type="hidden" name="offer" value="PEIMI10 - 10% off eligible first wholesale order">
+      <input type="hidden" name="page_url" id="discountPageUrl" value="">
+      <input type="email" name="email" id="discountEmail" placeholder="Business email address" autocomplete="email" required aria-label="Business email address">
+      <button class="submit-btn" type="submit">Unlock My 10% Offer</button>
+      <div class="discount-status" id="discountStatus" aria-live="polite"></div>
+    </form>
+    <p class="discount-terms">Use code PEIMI10 when requesting your first wholesale quotation. Eligibility is confirmed with the final order terms.</p>
+  </div>
+</div>
+
+<script>
+(() => {
+  const modal=document.getElementById('discountModal');
+  const closeButton=document.getElementById('discountClose');
+  const form=document.getElementById('discountForm');
+  const email=document.getElementById('discountEmail');
+  const status=document.getElementById('discountStatus');
+  const submitButton=form.querySelector('button[type="submit"]');
+  const pageUrl=document.getElementById('discountPageUrl');
+
+  const track=(eventName,params={})=>{
+    if(typeof window.peimiTrack==='function') window.peimiTrack(eventName,params);
+    else if(typeof window.gtag==='function') window.gtag('event',eventName,params);
+  };
+  const open=()=>{
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    track('discount_popup_view',{page_path:window.location.pathname});
+    setTimeout(()=>email.focus({preventScroll:true}),120);
+  };
+  const close=()=>{
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+    track('discount_popup_close',{page_path:window.location.pathname});
+  };
+
+  closeButton.addEventListener('click',close);
+  modal.addEventListener('click',event=>{if(event.target===modal) close();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape' && modal.classList.contains('show')) close();});
+
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    pageUrl.value=window.location.href;
+    submitButton.disabled=true;
+    submitButton.textContent='Unlocking...';
+    status.textContent='Sending your offer request...';
+    status.className='discount-status';
+    track('discount_popup_submit_attempt',{page_path:window.location.pathname});
+    try{
+      const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      const result=await response.json();
+      if(!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
+      form.reset();
+      status.textContent='Success — your offer code is PEIMI10. Mention it with your first wholesale inquiry.';
+      status.className='discount-status is-success';
+      submitButton.textContent='Offer Unlocked';
+      track('discount_popup_submit_success',{page_path:window.location.pathname});
+    }catch(error){
+      status.textContent='We could not submit the email right now. Please use code PEIMI10 in your inquiry.';
+      status.className='discount-status is-error';
+      submitButton.disabled=false;
+      submitButton.textContent='Try Again';
+      track('discount_popup_submit_error',{page_path:window.location.pathname,message:error.message});
+    }
+  });
+
+  requestAnimationFrame(open);
+})();
+</script>
 
 <script>
 // FAQ
