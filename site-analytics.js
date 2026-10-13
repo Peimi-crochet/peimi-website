@@ -22,6 +22,45 @@
   };
 
   document.addEventListener('DOMContentLoaded',function(){
+    var isSpanish=(document.documentElement.lang||'').toLowerCase().indexOf('es')===0;
+    var spanishPages={
+      '/':'/es/',
+      '/index.html':'/es/',
+      '/bags.html':'/es/bags.html',
+      '/bouquets.html':'/es/bouquets.html',
+      '/dolls.html':'/es/dolls.html',
+      '/accessories.html':'/es/accessories.html',
+      '/micro-accessories.html':'/es/micro-accessories.html',
+      '/christmas.html':'/es/christmas.html',
+      '/crochet-keychains.html':'/es/crochet-keychains.html',
+      '/crochet-car-hangers.html':'/es/crochet-car-hangers.html',
+      '/market-hot-picks.html':'/es/market-hot-picks.html'
+    };
+    var currentPath=window.location.pathname.replace(/\/+/g,'/');
+    var englishPath=isSpanish?currentPath.replace(/^\/es(?=\/)/,'')||'/':currentPath;
+    if(englishPath==='/index.html') englishPath='/';
+    var spanishPath=spanishPages[englishPath]||'/es/';
+    var languageHost=document.querySelector('#nav .nav-menu, #nav ul');
+    if(languageHost){
+      var languageItem=document.createElement('li');
+      languageItem.className='peimi-language-item';
+      languageItem.innerHTML='<button class="peimi-language-button" type="button" aria-expanded="false" aria-label="'+(isSpanish?'Cambiar idioma':'Change language')+'">'+(isSpanish?'ES':'EN')+' <span aria-hidden="true">&#9662;</span></button><div class="peimi-language-menu"><a href="'+englishPath+'" hreflang="en">English</a><a href="'+spanishPath+'" hreflang="es">Espa&ntilde;ol</a></div>';
+      languageHost.appendChild(languageItem);
+      var languageButton=languageItem.querySelector('.peimi-language-button');
+      languageButton.addEventListener('click',function(event){
+        event.stopPropagation();
+        var open=languageItem.classList.toggle('is-open');
+        languageButton.setAttribute('aria-expanded',String(open));
+      });
+      document.addEventListener('click',function(){
+        languageItem.classList.remove('is-open');
+        languageButton.setAttribute('aria-expanded','false');
+      });
+      var languageStyle=document.createElement('style');
+      languageStyle.textContent='.peimi-language-item{position:relative;display:flex;align-items:center}.peimi-language-button{border:1px solid rgba(176,141,87,.55);background:transparent;color:inherit;padding:9px 11px;font:600 10px/1 Inter,sans-serif;letter-spacing:1.5px;cursor:pointer}.peimi-language-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:10020;display:none;min-width:132px;padding:6px;background:#120f0b;border:1px solid rgba(176,141,87,.38);box-shadow:0 12px 28px rgba(0,0,0,.22)}.peimi-language-item.is-open .peimi-language-menu{display:grid}.peimi-language-menu a{padding:10px 12px!important;color:#f7f0e7!important;font:600 11px/1.2 Inter,sans-serif!important;letter-spacing:.6px!important;text-decoration:none!important;white-space:nowrap}.peimi-language-menu a:hover{background:#b08d57;color:#fff!important}@media(max-width:760px){.peimi-language-item{display:block}.peimi-language-button{width:100%;text-align:left}.peimi-language-menu{position:static;margin-top:6px;box-shadow:none}}';
+      document.head.appendChild(languageStyle);
+    }
+
     var whatsappTarget='';
     var whatsappRouter=document.createElement('div');
     whatsappRouter.id='peimiWhatsappRouter';
@@ -29,7 +68,7 @@
     whatsappRouter.setAttribute('aria-modal','true');
     whatsappRouter.setAttribute('aria-hidden','true');
     whatsappRouter.setAttribute('aria-labelledby','peimiWhatsappRouterTitle');
-    whatsappRouter.innerHTML='<div class="peimi-wa-panel"><button class="peimi-wa-close" type="button" aria-label="Close">&times;</button><div class="peimi-wa-kicker">PEIMI WHOLESALE SALES</div><h2 id="peimiWhatsappRouterTitle">Choose Your Sales Advisor</h2><p class="peimi-wa-intro">Select either advisor for wholesale pricing, samples, customization and order support.</p><div class="peimi-wa-options"><a class="peimi-wa-option" data-wa-number="8615089572877" target="_blank" rel="noopener"><span class="peimi-wa-avatar">F</span><span><strong>Fung</strong><small>Wholesale Sales · +86 150 8957 2877</small></span><b>Chat Now &rarr;</b></a><a class="peimi-wa-option" data-wa-number="8619860581805" target="_blank" rel="noopener"><span class="peimi-wa-avatar">M</span><span><strong>Maggie</strong><small>Wholesale Sales · +86 198 6058 1805</small></span><b>Chat Now &rarr;</b></a></div></div>';
+    whatsappRouter.innerHTML=isSpanish?'<div class="peimi-wa-panel"><button class="peimi-wa-close" type="button" aria-label="Cerrar">&times;</button><div class="peimi-wa-kicker">VENTAS MAYORISTAS PEIMI</div><h2 id="peimiWhatsappRouterTitle">Elija su asesora comercial</h2><p class="peimi-wa-intro">Contacte con Fung o Maggie para precios, muestras, personalizaci&oacute;n y pedidos.</p><div class="peimi-wa-options"><a class="peimi-wa-option" data-wa-number="8615089572877" target="_blank" rel="noopener"><span class="peimi-wa-avatar">F</span><span><strong>Fung</strong><small>Ventas mayoristas · +86 150 8957 2877</small></span><b>Contactar &rarr;</b></a><a class="peimi-wa-option" data-wa-number="8619860581805" target="_blank" rel="noopener"><span class="peimi-wa-avatar">M</span><span><strong>Maggie</strong><small>Ventas mayoristas · +86 198 6058 1805</small></span><b>Contactar &rarr;</b></a></div></div>':'<div class="peimi-wa-panel"><button class="peimi-wa-close" type="button" aria-label="Close">&times;</button><div class="peimi-wa-kicker">PEIMI WHOLESALE SALES</div><h2 id="peimiWhatsappRouterTitle">Choose Your Sales Advisor</h2><p class="peimi-wa-intro">Select either advisor for wholesale pricing, samples, customization and order support.</p><div class="peimi-wa-options"><a class="peimi-wa-option" data-wa-number="8615089572877" target="_blank" rel="noopener"><span class="peimi-wa-avatar">F</span><span><strong>Fung</strong><small>Wholesale Sales · +86 150 8957 2877</small></span><b>Chat Now &rarr;</b></a><a class="peimi-wa-option" data-wa-number="8619860581805" target="_blank" rel="noopener"><span class="peimi-wa-avatar">M</span><span><strong>Maggie</strong><small>Wholesale Sales · +86 198 6058 1805</small></span><b>Chat Now &rarr;</b></a></div></div>';
     document.body.appendChild(whatsappRouter);
 
     var whatsappStyle=document.createElement('style');
