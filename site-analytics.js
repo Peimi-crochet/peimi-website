@@ -22,30 +22,23 @@
   };
 
   document.addEventListener('DOMContentLoaded',function(){
-    var isSpanish=(document.documentElement.lang||'').toLowerCase().indexOf('es')===0;
-    var spanishPages={
-      '/':'/es/',
-      '/index.html':'/es/',
-      '/bags.html':'/es/bags.html',
-      '/bouquets.html':'/es/bouquets.html',
-      '/dolls.html':'/es/dolls.html',
-      '/accessories.html':'/es/accessories.html',
-      '/micro-accessories.html':'/es/micro-accessories.html',
-      '/christmas.html':'/es/christmas.html',
-      '/crochet-keychains.html':'/es/crochet-keychains.html',
-      '/crochet-car-hangers.html':'/es/crochet-car-hangers.html',
-      '/crochet-home-decor.html':'/es/crochet-home-decor.html',
-      '/market-hot-picks.html':'/es/market-hot-picks.html'
-    };
     var currentPath=window.location.pathname.replace(/\/+/g,'/');
-    var englishPath=isSpanish?currentPath.replace(/^\/es(?=\/)/,'')||'/':currentPath;
+    var localeMatch=currentPath.match(/^\/(es|fr|ja|ko)(?=\/|$)/);
+    var currentLocale=localeMatch?localeMatch[1]:'en';
+    var isSpanish=currentLocale==='es';
+    var englishPath=localeMatch?currentPath.replace(/^\/(es|fr|ja|ko)(?=\/|$)/,'')||'/':currentPath;
     if(englishPath==='/index.html') englishPath='/';
-    var spanishPath=spanishPages[englishPath]||'/es/';
+    var supportedPages=['/','/bags.html','/bouquets.html','/dolls.html','/accessories.html','/micro-accessories.html','/christmas.html','/crochet-keychains.html','/crochet-car-hangers.html','/crochet-home-decor.html','/market-hot-picks.html'];
+    if(supportedPages.indexOf(englishPath)===-1) englishPath='/';
+    function languageUrl(locale){return locale==='en'?englishPath:'/'+locale+(englishPath==='/'?'/':englishPath);}
+    var languageLabels={en:'English',es:'Espa&ntilde;ol',fr:'Fran&ccedil;ais',ja:'日本語',ko:'한국어'};
+    var languageCodes={en:'EN',es:'ES',fr:'FR',ja:'JA',ko:'KO'};
     var languageHost=document.querySelector('#nav .nav-menu, #nav ul');
     if(languageHost){
       var languageItem=document.createElement('li');
       languageItem.className='peimi-language-item';
-      languageItem.innerHTML='<button class="peimi-language-button" type="button" aria-expanded="false" aria-label="'+(isSpanish?'Cambiar idioma':'Change language')+'">'+(isSpanish?'ES':'EN')+' <span aria-hidden="true">&#9662;</span></button><div class="peimi-language-menu"><a href="'+englishPath+'" hreflang="en">English</a><a href="'+spanishPath+'" hreflang="es">Espa&ntilde;ol</a></div>';
+      var languageLinks=['en','es','fr','ja','ko'].map(function(locale){return '<a href="'+languageUrl(locale)+'" hreflang="'+locale+'"'+(locale===currentLocale?' aria-current="page"':'')+'>'+languageLabels[locale]+'</a>';}).join('');
+      languageItem.innerHTML='<button class="peimi-language-button" type="button" aria-expanded="false" aria-label="Change language">'+languageCodes[currentLocale]+' <span aria-hidden="true">&#9662;</span></button><div class="peimi-language-menu">'+languageLinks+'</div>';
       languageHost.appendChild(languageItem);
       var languageButton=languageItem.querySelector('.peimi-language-button');
       languageButton.addEventListener('click',function(event){
