@@ -13,6 +13,7 @@ const categories=[
   ['micro-accessories.html','Joyería de micro crochet','/assets/micro-accessories/jewelry_2.png'],
   ['crochet-keychains.html','Llaveros y charms','/assets/keychains/generated/strawberry-clean.webp'],
   ['crochet-car-hangers.html','Adornos para coche','/assets/car-hangers/generated/pastel-rainbow.webp'],
+  ['crochet-home-decor.html','Decoración de hogar en crochet','/assets/home-decor/storage-baskets.webp'],
   ['christmas.html','Colección de Navidad','/assets/christmas/xmas_1.png']
 ];
 
@@ -76,11 +77,17 @@ const pages={
     points:['Largo del cordón y nudos personalizados','Cuentas, borlas y paletas a medida','Tarjetas con instrucciones y marca','Revisión de peso y dimensiones en muestra'],heading:'Una nueva categoría para regalo y lifestyle',body:'La colocación final debe cumplir las normas locales y no obstruir la visión del conductor. Confirmamos peso, dimensiones y presentación durante el muestreo.',
     cards:[['/assets/car-hangers/generated/pastel-rainbow.webp','Arcoíris pastel'],['/assets/car-hangers/generated/daisy-bouquet.webp','Ramo de margaritas'],['/assets/car-hangers/generated/moon-stars.webp','Luna y estrellas'],['/assets/car-hangers/generated/sun-cloud.webp','Sol y nube']]
   },
+  'crochet-home-decor.html':{
+    path:'crochet-home-decor.html',title:'Decoración de hogar de crochet al por mayor | PEIMI',description:'Fabricante de decoración de hogar de crochet personalizada: cestas, posavasos, cubremacetas, tapices y cojines para compradores mayoristas.',
+    eyebrow:'COLECCIÓN DE HOGAR Y LIFESTYLE',h1:'Decoración de hogar de crochet al por mayor',intro:'Cestas, juegos de mesa, cubremacetas y acentos textiles personalizados para tiendas de regalos, hogar, jardín y colecciones de marca privada.',image:'/assets/home-decor/wall-hanging-cushion.webp',
+    points:['MOQ desde 200 unidades por modelo','Tamaños y colores personalizados','Etiquetas y embalaje de marca privada','Muestra aprobada antes de producción'],heading:'Cree una colección coordinada para el hogar',body:'Alineamos materiales, dimensiones, paletas, etiquetas y presentación para que cada producto funcione dentro del mismo programa minorista.',
+    cards:[['/assets/home-decor/storage-baskets.webp','Set de cestas de crochet'],['/assets/home-decor/coaster-placemat-set.webp','Posavasos y manteles individuales'],['/assets/home-decor/plant-pot-covers.webp','Cubremacetas de crochet'],['/assets/home-decor/wall-hanging-cushion.webp','Tapiz y cojín decorativo']]
+  },
   'market-hot-picks.html':{
     path:'market-hot-picks.html',title:'Productos de crochet de tendencia al por mayor | PEIMI',description:'Selección B2B de productos de crochet para compradores de regalos, boutiques, floristerías y marcas privadas.',
     eyebrow:'SELECCIÓN B2B MULTICATEGORÍA',h1:'Productos de crochet con potencial para retail',intro:'Una selección para comparar bolsos, ramos, amigurumi, regalos positivos, llaveros y accesorios según su capacidad de personalización y presentación.',image:'/assets/factory/factory-audit-production.webp',
     points:['Selección para tiendas y compradores B2B','Categorías permanentes y estacionales','Opciones OEM / ODM','Recomendaciones según canal y precio'],heading:'Cree una selección adaptada a su mercado',body:'No existe un producto ganador garantizado. Nuestro equipo puede recomendar categorías según país, canal de venta, cliente objetivo, temporada y presupuesto.',
-    cards:categories.slice(0,8).map(([href,name,image])=>({href:'/es/'+href,name,image,copy:'Explorar opciones de compra y personalización.'}))
+    cards:categories.map(([href,name,image])=>({href:'/es/'+href,name,image,copy:'Explorar opciones de compra y personalización.'}))
   }
 };
 
@@ -109,10 +116,13 @@ for(const [file,page] of Object.entries(pages)){
 
 const sitemapFile=path.join(root,'sitemap.xml');
 let sitemap=fs.readFileSync(sitemapFile,'utf8');
-if(!sitemap.includes('https://peimicrochet.com/es/')){
-  const spanishUrls=Object.values(pages).map(page=>`  <url><loc>https://peimicrochet.com/es/${page.path}</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>${page.path?'0.8':'0.9'}</priority></url>`).join('\n');
-  sitemap=sitemap.replace('</urlset>',`${spanishUrls}\n</urlset>`);
-  fs.writeFileSync(sitemapFile,sitemap);
+for(const page of Object.values(pages)){
+  const url=`https://peimicrochet.com/es/${page.path}`;
+  if(!sitemap.includes(`<loc>${url}</loc>`)){
+    const entry=`  <url><loc>${url}</loc><lastmod>2026-10-14</lastmod><changefreq>weekly</changefreq><priority>${page.path?'0.8':'0.9'}</priority></url>`;
+    sitemap=sitemap.replace('</urlset>',`${entry}\n</urlset>`);
+  }
 }
+fs.writeFileSync(sitemapFile,sitemap);
 
 console.log(`Generated ${Object.keys(pages).length} Spanish pages and updated language SEO links.`);

@@ -34,6 +34,7 @@
       '/christmas.html':'/es/christmas.html',
       '/crochet-keychains.html':'/es/crochet-keychains.html',
       '/crochet-car-hangers.html':'/es/crochet-car-hangers.html',
+      '/crochet-home-decor.html':'/es/crochet-home-decor.html',
       '/market-hot-picks.html':'/es/market-hot-picks.html'
     };
     var currentPath=window.location.pathname.replace(/\/+/g,'/');
@@ -57,7 +58,7 @@
         languageButton.setAttribute('aria-expanded','false');
       });
       var languageStyle=document.createElement('style');
-      languageStyle.textContent='.peimi-language-item{position:relative;display:flex;align-items:center}.peimi-language-button{border:1px solid rgba(176,141,87,.55);background:transparent;color:inherit;padding:9px 11px;font:600 10px/1 Inter,sans-serif;letter-spacing:1.5px;cursor:pointer}.peimi-language-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:10020;display:none;min-width:132px;padding:6px;background:#120f0b;border:1px solid rgba(176,141,87,.38);box-shadow:0 12px 28px rgba(0,0,0,.22)}.peimi-language-item.is-open .peimi-language-menu{display:grid}.peimi-language-menu a{padding:10px 12px!important;color:#f7f0e7!important;font:600 11px/1.2 Inter,sans-serif!important;letter-spacing:.6px!important;text-decoration:none!important;white-space:nowrap}.peimi-language-menu a:hover{background:#b08d57;color:#fff!important}@media(max-width:760px){.peimi-language-item{display:block}.peimi-language-button{width:100%;text-align:left}.peimi-language-menu{position:static;margin-top:6px;box-shadow:none}}';
+      languageStyle.textContent='.peimi-language-item{position:relative;display:flex;align-items:center}.peimi-language-button{min-width:56px;border:1px solid #b08d57!important;background:rgba(176,141,87,.16)!important;color:#fff8ee!important;padding:9px 11px;font:700 10px/1 Inter,sans-serif;letter-spacing:1.5px;cursor:pointer;text-shadow:0 1px 2px rgba(0,0,0,.55)}.peimi-language-button:hover,.peimi-language-button:focus-visible{background:#b08d57!important;color:#fff!important;outline:2px solid rgba(255,255,255,.4);outline-offset:2px}.peimi-language-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:10020;display:none;min-width:132px;padding:6px;background:#120f0b;border:1px solid rgba(176,141,87,.38);box-shadow:0 12px 28px rgba(0,0,0,.22)}.peimi-language-item.is-open .peimi-language-menu{display:grid}.peimi-language-menu a{padding:10px 12px!important;color:#f7f0e7!important;font:600 11px/1.2 Inter,sans-serif!important;letter-spacing:.6px!important;text-decoration:none!important;white-space:nowrap}.peimi-language-menu a:hover{background:#b08d57;color:#fff!important}@media(max-width:760px){.peimi-language-item{display:block}.peimi-language-button{width:100%;text-align:left}.peimi-language-menu{position:static;margin-top:6px;box-shadow:none}}';
       document.head.appendChild(languageStyle);
     }
 
