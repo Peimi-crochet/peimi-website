@@ -87,7 +87,7 @@ function render(locale,route,config){
 for(const [locale,config] of Object.entries(languages)){
   const out=path.join(root,locale); fs.mkdirSync(out,{recursive:true});
   for(const route of routes){
-    let output=render(locale,route,config).replace('es.css?v=20261014-3','es.css?v=20261015-5');
+    let output=render(locale,route,config).replace('es.css?v=20261014-3','es.css?v=20261015-6');
     if(route==='crochet-home-decor.html') output=output.replace('<body>','<body class="home-decor-page">');
     fs.writeFileSync(path.join(out,route||'index.html'),output,'utf8');
   }
