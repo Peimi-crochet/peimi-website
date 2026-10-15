@@ -11,7 +11,7 @@
 .home-decor-page .hero .intro{color:#eadfd2}
 .home-decor-page .hero-media{position:relative;min-height:760px;z-index:1}
 .home-decor-page .hero-media img{position:absolute;inset:0;opacity:0;pointer-events:none}
-.home-decor-page .hero-media:before{content:"";position:absolute;inset:0 auto 0 0;z-index:1;width:180px;pointer-events:none;background:linear-gradient(90deg,rgba(82,59,41,.14),transparent)}
+.home-decor-page .hero-media:before{display:none}
 .home-decor-page .hero>*{min-width:0}.home-decor-page .hero h1{overflow-wrap:break-word}
 @media(max-width:980px){.hero{grid-template-columns:1fr}.hero-copy{padding:72px 30px}.hero-media{min-height:390px}.grid,.trust{grid-template-columns:repeat(2,1fr)}.nav-menu{gap:12px}.nav-menu>li:not(.peimi-language-item):not(:last-child){display:none}.brief-grid,.buyer-inner{grid-template-columns:1fr}.home-decor-page .hero{min-height:680px;grid-template-columns:1fr;background-image:linear-gradient(90deg,rgba(34,24,17,.92),rgba(45,31,22,.7) 64%,rgba(70,49,34,.35)),url('/assets/home-decor/home-decor-hero-panoramic.webp');background-position:64% center}.home-decor-page .hero-media{display:none}.home-decor-page .hero:after,.home-decor-page .hero-media:before{display:none}}
 @media(max-width:580px){.hero h1{font-size:46px}.grid,.trust,.checklist{grid-template-columns:1fr}.trust div{text-align:left}.buyer h2{font-size:34px}.home-decor-page .hero{min-height:640px;background-position:68% center}.home-decor-page .hero-copy:before{opacity:.65}}
