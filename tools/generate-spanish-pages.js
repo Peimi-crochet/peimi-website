@@ -14,6 +14,7 @@ const categories=[
   ['crochet-keychains.html','Llaveros y charms','/assets/keychains/generated/strawberry-clean.webp'],
   ['crochet-car-hangers.html','Adornos para coche','/assets/car-hangers/generated/pastel-rainbow.webp'],
   ['crochet-home-decor.html','Decoración de hogar en crochet','/assets/home-decor/storage-baskets.webp'],
+  ['crochet-baby-gifts.html','Regalos de bebé y decoración infantil','/assets/baby-gifts/bunny-rattle.webp'],
   ['christmas.html','Colección de Navidad','/assets/christmas/xmas_1.png']
 ];
 
@@ -83,6 +84,12 @@ const pages={
     points:['MOQ desde 200 unidades por modelo','Tamaños y colores personalizados','Etiquetas y embalaje de marca privada','Muestra aprobada antes de producción'],heading:'Cree una colección coordinada para el hogar',body:'Alineamos materiales, dimensiones, paletas, etiquetas y presentación para que cada producto funcione dentro del mismo programa minorista.',
     cards:[['/assets/home-decor/storage-baskets.webp','Set de cestas de crochet'],['/assets/home-decor/coaster-placemat-set.webp','Posavasos y manteles individuales'],['/assets/home-decor/plant-pot-covers.webp','Cubremacetas de crochet'],['/assets/home-decor/wall-hanging-cushion.webp','Tapiz y cojín decorativo']]
   },
+  'crochet-baby-gifts.html':{
+    path:'crochet-baby-gifts.html',title:'Regalos de bebé y juguetes de crochet al por mayor | PEIMI',description:'Fabricante de sonajeros, móviles, doudous, patucos, decoración infantil y sets de regalo de crochet personalizados.',
+    eyebrow:'COLECCIONES INFANTILES OEM / ODM',h1:'Regalos de bebé y juguetes de crochet al por mayor',intro:'Sonajeros, móviles, doudous, patucos, decoración y sets coordinados para boutiques infantiles, tiendas de regalos y marcas privadas.',image:'/assets/baby-gifts/baby-gifts-hero.webp',
+    points:['MOQ desde 200 unidades por modelo','Colores y personajes personalizados','Cajas, tarjetas y etiquetas de marca','Revisión según mercado y edad'],heading:'Cree una colección infantil coordinada',body:'Comparta el mercado de destino, la edad prevista, el uso, los colores, el embalaje y la cantidad antes del muestreo para definir correctamente el proyecto.',
+    cards:[['/assets/baby-gifts/bunny-rattle.webp','Sonajero de conejito'],['/assets/baby-gifts/nursery-mobile.webp','Móvil de nube y luna'],['/assets/baby-gifts/lion-lovey.webp','Doudou león'],['/assets/baby-gifts/rainbow-wall-hanging.webp','Arcoíris decorativo'],['/assets/baby-gifts/baby-booties.webp','Patucos de crochet'],['/assets/baby-gifts/woodland-gift-set.webp','Set de animales del bosque']]
+  },
   'market-hot-picks.html':{
     path:'market-hot-picks.html',title:'Productos de crochet de tendencia al por mayor | PEIMI',description:'Selección B2B de productos de crochet para compradores de regalos, boutiques, floristerías y marcas privadas.',
     eyebrow:'SELECCIÓN B2B MULTICATEGORÍA',h1:'Productos de crochet con potencial para retail',intro:'Una selección para comparar bolsos, ramos, amigurumi, regalos positivos, llaveros y accesorios según su capacidad de personalización y presentación.',image:'/assets/factory/factory-audit-production.webp',
@@ -105,7 +112,7 @@ function html(file,page){
 }
 
 for(const [file,page] of Object.entries(pages)){
-  let output=html(file,page).replace('es.css?v=20261014-3','es.css?v=20261015-7');
+  let output=html(file,page).replace('es.css?v=20261014-3','es.css?v=20261015-8');
   if(file==='crochet-home-decor.html') output=output.replace('<body>','<body class="home-decor-page">');
   fs.writeFileSync(path.join(out,file),output);
 }
@@ -125,7 +132,7 @@ let sitemap=fs.readFileSync(sitemapFile,'utf8');
 for(const page of Object.values(pages)){
   const url=`https://peimicrochet.com/es/${page.path}`;
   if(!sitemap.includes(`<loc>${url}</loc>`)){
-    const entry=`  <url><loc>${url}</loc><lastmod>2026-10-14</lastmod><changefreq>weekly</changefreq><priority>${page.path?'0.8':'0.9'}</priority></url>`;
+    const entry=`  <url><loc>${url}</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>${page.path?'0.8':'0.9'}</priority></url>`;
     sitemap=sitemap.replace('</urlset>',`${entry}\n</urlset>`);
   }
 }
