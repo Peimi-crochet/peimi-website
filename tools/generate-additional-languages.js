@@ -76,6 +76,26 @@ const languages={
 
 function languageUrl(locale,route){return locale==='en'?`https://peimicrochet.com/${route}`:`https://peimicrochet.com/${locale}/${route}`}
 function alternates(route){return ['en','es','fr','ja','ko'].map(locale=>`<link rel="alternate" hreflang="${locale}" href="${languageUrl(locale,route)}">`).join('')+`<link rel="alternate" hreflang="x-default" href="${languageUrl('en',route)}">`}
+function structuredData(locale,route,page){
+  const canonical=languageUrl(locale,route);
+  const graph=route?[{
+    '@type':'CollectionPage','@id':`${canonical}#webpage`,url:canonical,name:page.title,description:page.desc,inLanguage:locale,
+    isPartOf:{'@id':'https://peimicrochet.com/#website'},publisher:{'@id':'https://peimicrochet.com/#organization'}
+  },{
+    '@type':'BreadcrumbList','@id':`${canonical}#breadcrumb`,itemListElement:[
+      {'@type':'ListItem',position:1,name:'PEIMI',item:languageUrl(locale,'')},
+      {'@type':'ListItem',position:2,name:page.h1,item:canonical}
+    ]
+  }]:[{
+    '@type':'Organization','@id':'https://peimicrochet.com/#organization',name:'PEIMI Crochet',url:'https://peimicrochet.com/',
+    logo:'https://peimicrochet.com/hero.avif',email:'ririainipeimi@gmail.com',
+    sameAs:['https://www.instagram.com/peimi_crochet/','https://peimi.en.alibaba.com/']
+  },{
+    '@type':'WebSite','@id':'https://peimicrochet.com/#website',url:'https://peimicrochet.com/',name:'PEIMI Crochet',
+    inLanguage:locale,publisher:{'@id':'https://peimicrochet.com/#organization'}
+  }];
+  return `<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph})}</script>`;
+}
 function categoryCards(locale,config){return productRoutes.map(route=>({href:`/${locale}/${route}`,name:config.categories[route],image:assets[route].hero,copy:config.ui.inquire}))}
 function productCards(locale,route,page,ui){return assets[route].cards.map((image,i)=>({href:'https://wa.me/8619860581805?text='+encodeURIComponent(`${page.h1}: ${page.cards[i]}`),name:page.cards[i],image,copy:ui.inquire}))}
 function render(locale,route,config){
@@ -85,7 +105,7 @@ function render(locale,route,config){
   const hero=page.hero||(assets[route]&&assets[route].hero);
   const canonical=languageUrl(locale,route);
   const navCategories=productRoutes.map(r=>`<li><a href="/${locale}/${r}">${config.categories[r]}</a></li>`).join('');
-  return `<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="/site-analytics.js" defer></script><title>${page.title}</title><meta name="description" content="${page.desc}"><link rel="canonical" href="${canonical}">${alternates(route)}<link rel="stylesheet" href="/es/es.css?v=20261014-3"></head><body><nav id="nav"><a class="logo" href="/${locale}/">PEI<em>MI</em></a><button class="menu-toggle" type="button" aria-label="Menu">&#9776;</button><ul class="nav-menu"><li><a href="/${locale}/">${config.ui.home}</a></li><li><a href="/${locale}/#categorias">${config.ui.products}</a></li><li><a href="/${locale}/market-hot-picks.html">${config.ui.hot}</a></li><li><a href="/#story">${config.ui.story}</a></li><li><a class="nav-btn" href="https://wa.me/8619860581805">${config.ui.quote}</a></li></ul><ul hidden>${navCategories}</ul></nav><main><header class="hero"><div class="hero-copy"><div class="eyebrow">${page.eyebrow}</div><h1>${page.h1}</h1><p class="intro">${page.intro}</p><div class="actions"><a class="button" href="#collection">${config.ui.view}</a><a class="button alt" href="https://wa.me/8619860581805">${config.ui.sales}</a></div></div><div class="hero-media"><img src="${hero}" alt="${page.h1}"></div></header><div class="trust">${page.points.map(x=>`<div>${x}</div>`).join('')}</div><section class="section" id="collection"><div class="eyebrow">${config.ui.buying}</div><h2>${page.heading}</h2><p class="lead">${page.body}</p><div class="grid" id="categorias">${cards.map(card=>`<article class="card"><img loading="lazy" src="${card.image}" alt="${card.name}"><div class="card-copy"><h3>${card.name}</h3><p>${card.copy}</p><a href="${card.href}">${isDirectory||route==='market-hot-picks.html'?config.ui.view:config.ui.inquire} &rarr;</a></div></article>`).join('')}</div></section><section class="buyer"><div class="buyer-inner"><div><h2>${config.ui.briefTitle}</h2><p>${config.ui.brief}</p></div><a class="button" href="https://wa.me/8619860581805">${config.ui.sales}</a></div></section></main><footer class="footer">PEIMI Crochet · ${config.ui.footer}</footer></body></html>`;
+  return `<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="/site-analytics.js" defer></script><title>${page.title}</title><meta name="description" content="${page.desc}"><link rel="canonical" href="${canonical}">${alternates(route)}${structuredData(locale,route,page)}<link rel="stylesheet" href="/es/es.css?v=20261014-3"></head><body><nav id="nav"><a class="logo" href="/${locale}/">PEI<em>MI</em></a><button class="menu-toggle" type="button" aria-label="Menu">&#9776;</button><ul class="nav-menu"><li><a href="/${locale}/">${config.ui.home}</a></li><li><a href="/${locale}/#categorias">${config.ui.products}</a></li><li><a href="/${locale}/market-hot-picks.html">${config.ui.hot}</a></li><li><a href="/#story">${config.ui.story}</a></li><li><a class="nav-btn" href="https://wa.me/8619860581805">${config.ui.quote}</a></li></ul><ul hidden>${navCategories}</ul></nav><main><header class="hero"><div class="hero-copy"><div class="eyebrow">${page.eyebrow}</div><h1>${page.h1}</h1><p class="intro">${page.intro}</p><div class="actions"><a class="button" href="#collection">${config.ui.view}</a><a class="button alt" href="https://wa.me/8619860581805">${config.ui.sales}</a></div></div><div class="hero-media"><img src="${hero}" alt="${page.h1}"></div></header><div class="trust">${page.points.map(x=>`<div>${x}</div>`).join('')}</div><section class="section" id="collection"><div class="eyebrow">${config.ui.buying}</div><h2>${page.heading}</h2><p class="lead">${page.body}</p><div class="grid" id="categorias">${cards.map(card=>`<article class="card"><img loading="lazy" src="${card.image}" alt="${card.name}"><div class="card-copy"><h3>${card.name}</h3><p>${card.copy}</p><a href="${card.href}">${isDirectory||route==='market-hot-picks.html'?config.ui.view:config.ui.inquire} &rarr;</a></div></article>`).join('')}</div></section><section class="buyer"><div class="buyer-inner"><div><h2>${config.ui.briefTitle}</h2><p>${config.ui.brief}</p></div><a class="button" href="https://wa.me/8619860581805">${config.ui.sales}</a></div></section></main><footer class="footer">PEIMI Crochet · ${config.ui.footer}</footer></body></html>`;
 }
 
 for(const [locale,config] of Object.entries(languages)){
