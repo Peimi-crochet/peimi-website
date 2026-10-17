@@ -22,6 +22,14 @@
   };
 
   document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('a[data-quote-category]').forEach(function(link){
+      link.addEventListener('click',function(){
+        try{
+          window.sessionStorage.setItem('peimiQuoteCategory',link.getAttribute('data-quote-category')||'');
+        }catch(error){}
+      });
+    });
+
     var currentPath=window.location.pathname.replace(/\/+/g,'/');
     var localeMatch=currentPath.match(/^\/(es|fr|ja|ko)(?=\/|$)/);
     var currentLocale=localeMatch?localeMatch[1]:'en';
@@ -103,6 +111,7 @@
     });
 
     document.querySelectorAll('a[href*="wa.me/"]').forEach(function(link){
+      link.setAttribute('rel','nofollow noopener');
       link.addEventListener('click',function(event){
         if(event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();

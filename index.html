@@ -1563,14 +1563,27 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
     const deliveryWindowField=quoteForm.querySelector('input[name="delivery_window"]');
     const statusField=document.getElementById('formStatus');
     const submitButton=quoteForm.querySelector('button[type="submit"]');
-    const queryCategory=new URLSearchParams(window.location.search).get('category');
+    const urlParams=new URLSearchParams(window.location.search);
+    const queryCategory=urlParams.get('category');
+    let storedCategory='';
+    try{
+      storedCategory=window.sessionStorage.getItem('peimiQuoteCategory') || '';
+      window.sessionStorage.removeItem('peimiQuoteCategory');
+    }catch(error){}
     const categoryAliases={
       'Custom Amigurumi':'Crochet Dolls / Amigurumi',
       'Crochet Keychains and Bag Charms':'Custom Mini Keychains & Charms / Gifts',
       'Crochet Car Hanging Ornaments':'Car Charms & Mirror Hangings',
       'Market Hot Crochet Products':'Multiple Categories'
     };
-    const normalizedQueryCategory=queryCategory ? (categoryAliases[queryCategory] || queryCategory) : '';
+    const requestedCategory=storedCategory || queryCategory || '';
+    const normalizedQueryCategory=requestedCategory ? (categoryAliases[requestedCategory] || requestedCategory) : '';
+    if(queryCategory){
+      urlParams.delete('category');
+      const cleanQuery=urlParams.toString();
+      const cleanUrl=window.location.pathname+(cleanQuery?'?'+cleanQuery:'')+window.location.hash;
+      window.history.replaceState({},document.title,cleanUrl);
+    }
     const originalButtonText=submitButton.textContent;
 
     const trackEvent=(eventName,params={})=>{
