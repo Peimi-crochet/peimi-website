@@ -309,6 +309,14 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .buyer-feedback-meta{font-size:10px;line-height:1.6;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.48);}
 .buyer-feedback-frame{order:1;height:clamp(250px,29vw,390px);background:#F8F5EF;border-bottom:1px solid rgba(176,141,87,.32);display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .buyer-feedback-frame img{width:100%;height:100%;object-fit:contain;display:block;}
+.buyer-feedback-slide--design-story{width:clamp(760px,82vw,1180px);background:#F4EEE4;color:#21170F;}
+.buyer-feedback-slide--design-story .buyer-feedback-copy{background:#17120C;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:28px;align-items:end;}
+.buyer-feedback-slide--design-story .buyer-feedback-title{font-size:clamp(30px,3.2vw,48px);margin:0;}
+.buyer-feedback-slide--design-story .buyer-feedback-quote{font-family:Arial,sans-serif;font-style:normal;font-size:16px;margin:0;color:rgba(255,255,255,.78);}
+.buyer-feedback-proof{order:1;min-height:660px;padding:28px;background:#F4EEE4 url('assets/reviews/custom-design-review-bg.webp') center/cover no-repeat;border-bottom:1px solid rgba(176,141,87,.32);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:16px;}
+.buyer-feedback-proof figure{margin:0;background:#fff;border:1px solid rgba(77,52,31,.16);box-shadow:0 16px 35px rgba(50,31,15,.13);overflow:hidden;border-radius:4px;}
+.buyer-feedback-proof img{width:100%;height:100%;object-fit:contain;display:block;background:#fff;}
+.buyer-feedback-accuracy{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 12px;border:1px solid rgba(176,141,87,.45);color:#D8B272;font-size:10px;letter-spacing:2px;text-transform:uppercase;}
 @keyframes feedbackTicker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media (prefers-reduced-motion:reduce){.buyer-feedback-track{animation-duration:90s;}}
 
@@ -605,6 +613,10 @@ body.modal-open{overflow:hidden;}
   .buyer-feedback-title{font-size:24px;}
   .buyer-feedback-quote{font-size:16px;}
   .buyer-feedback-frame{height:auto;aspect-ratio:4/3;}
+  .buyer-feedback-slide--design-story{width:92vw;}
+  .buyer-feedback-slide--design-story .buyer-feedback-copy{grid-template-columns:1fr;gap:12px;}
+  .buyer-feedback-proof{min-height:0;padding:12px;grid-template-columns:1fr;grid-template-rows:auto;gap:10px;}
+  .buyer-feedback-proof figure{aspect-ratio:16/9;}
 
   .buyer-advantages{padding:72px 20px;}
   .buyer-advantages-head{grid-template-columns:1fr;gap:20px;margin-bottom:32px;}
@@ -763,6 +775,26 @@ body.modal-open{overflow:hidden;}
     <div class="buyer-feedback-slides" aria-live="off">
       <div class="buyer-feedback-track">
         <div class="buyer-feedback-group">
+      <article class="buyer-feedback-slide buyer-feedback-slide--design-story active" aria-hidden="false">
+        <div class="buyer-feedback-copy">
+          <div>
+            <div class="buyer-feedback-kicker">Sketch-to-Sample Buyer Story</div>
+            <h2 class="buyer-feedback-title">From Drawing to Reality</h2>
+            <div class="buyer-feedback-accuracy">Up to 90% Design Accuracy</div>
+          </div>
+          <div>
+            <p class="buyer-feedback-quote">From reference image to finished crochet sample, we confirm structure, strength, logo details and use requirements before production.</p>
+            <div class="buyer-feedback-meta">Australia · Custom Crochet Bag · WhatsApp Verified</div>
+          </div>
+        </div>
+        <div class="buyer-feedback-proof" aria-label="Four screenshots showing the custom crochet bag journey from drawing to buyer approval">
+          <figure><img src="assets/reviews/stacey-custom-bag-design-brief.png" alt="Buyer sharing the crochet bag drawing, reference images and functional requirements" width="1255" height="777" loading="eager" decoding="async"></figure>
+          <figure><img src="assets/reviews/stacey-custom-bag-product.png" alt="Buyer reviewing the completed custom crochet bag sample and requesting a video" width="1250" height="861" loading="eager" decoding="async"></figure>
+          <figure><img src="assets/reviews/stacey-custom-bag-feedback.png" alt="Buyer saying the custom crochet bag looks good and that she is very happy" width="1267" height="790" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/reviews/stacey-custom-bag-video-feedback.png" alt="Buyer approving the final custom crochet bag after receiving a product video" width="1186" height="371" loading="lazy" decoding="async"></figure>
+        </div>
+      </article>
+
       <article class="buyer-feedback-slide active" aria-hidden="false">
         <div class="buyer-feedback-copy">
           <div class="buyer-feedback-kicker">Real Buyer Feedback</div>
