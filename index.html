@@ -299,7 +299,8 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .buyer-feedback-heading{padding:0 60px 28px;max-width:1360px;margin:0 auto;text-align:center;}
 .buyer-feedback-heading h2{font-family:'Playfair Display',serif;font-size:42px;line-height:1.08;color:var(--white);margin-top:10px;}
 .buyer-feedback-slides{overflow:hidden;}
-.buyer-feedback-track{display:flex;width:max-content;will-change:transform;animation:feedbackTicker 48s linear infinite;}
+.buyer-feedback-track{display:flex;width:max-content;will-change:transform;animation:none;transform:translate3d(0,0,0);backface-visibility:hidden;}
+.buyer-feedback-track.is-ready{animation:feedbackTicker 72s linear infinite;}
 .buyer-feedback-group{display:flex;gap:24px;padding-right:24px;}
 .buyer-feedback-slide{display:flex;flex-direction:column;width:clamp(320px,40vw,540px);min-width:0;background:#17120C;border:1px solid rgba(176,141,87,.22);overflow:hidden;}
 .buyer-feedback-copy{order:2;padding:24px 26px 27px;}
@@ -308,9 +309,9 @@ body{font-family:'Inter',sans-serif;color:#3D2E22;background:#FAF6F0;margin:0;pa
 .buyer-feedback-quote{font-family:'Playfair Display',serif;font-size:17px;line-height:1.5;font-style:italic;color:rgba(255,255,255,.88);margin-bottom:17px;}
 .buyer-feedback-meta{font-size:10px;line-height:1.6;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.48);}
 .buyer-feedback-frame{order:1;height:clamp(250px,29vw,390px);background:#F8F5EF;border-bottom:1px solid rgba(176,141,87,.32);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.buyer-feedback-frame img{width:100%;height:100%;object-fit:contain;display:block;}
-@keyframes feedbackTicker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-@media (prefers-reduced-motion:reduce){.buyer-feedback-track{animation-duration:90s;}}
+.buyer-feedback-frame img{width:100%;height:100%;object-fit:contain;display:block;backface-visibility:hidden;transform:translateZ(0);}
+@keyframes feedbackTicker{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-1 * var(--feedback-distance, 0px)),0,0)}}
+@media (prefers-reduced-motion:reduce){.buyer-feedback-track.is-ready{animation-duration:110s;}}
 
 /* ===== B2B BUYER ADVANTAGES ===== */
 .buyer-advantages{background:#FAF6F0;padding:96px 60px;}
@@ -1782,10 +1783,38 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
     const group = carousel.querySelector('.buyer-feedback-group');
     if (!track || !group) return;
 
-    const duplicate = group.cloneNode(true);
-    duplicate.setAttribute('aria-hidden', 'true');
-    duplicate.querySelectorAll('img').forEach(image => image.setAttribute('loading', 'lazy'));
-    track.appendChild(duplicate);
+    const originalImages = [...group.querySelectorAll('img')];
+    originalImages.forEach(image => {
+      image.loading = 'eager';
+      image.decoding = 'async';
+    });
+
+    const prepareImage = image => {
+      if (image.complete && image.naturalWidth) {
+        return typeof image.decode === 'function' ? image.decode().catch(() => {}) : Promise.resolve();
+      }
+      return new Promise(resolve => {
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', resolve, { once: true });
+      });
+    };
+
+    Promise.all(originalImages.map(prepareImage)).then(() => {
+      const duplicate = group.cloneNode(true);
+      duplicate.setAttribute('aria-hidden', 'true');
+      duplicate.querySelectorAll('img').forEach(image => {
+        image.loading = 'eager';
+        image.decoding = 'async';
+      });
+      track.appendChild(duplicate);
+
+      const updateDistance = () => {
+        track.style.setProperty('--feedback-distance', `${group.getBoundingClientRect().width}px`);
+      };
+      updateDistance();
+      window.addEventListener('resize', updateDistance, { passive: true });
+      requestAnimationFrame(() => track.classList.add('is-ready'));
+    });
   })();
 </script>
 </body>
