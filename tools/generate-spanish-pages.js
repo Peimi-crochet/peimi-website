@@ -115,7 +115,7 @@ function structuredData(page,spanishUrl){
     ]
   }]:[{
     '@type':'Organization','@id':'https://peimicrochet.com/#organization',name:'PEIMI Crochet',url:'https://peimicrochet.com/',
-    logo:'https://peimicrochet.com/hero.avif',email:'ririainipeimi@gmail.com',
+    logo:'https://peimicrochet.com/hero.avif',email:'fung@peimicrochet.com',
     sameAs:['https://www.instagram.com/peimi_crochet/','https://peimi.en.alibaba.com/']
   },{
     '@type':'WebSite','@id':'https://peimicrochet.com/#website',url:'https://peimicrochet.com/',name:'PEIMI Crochet',
