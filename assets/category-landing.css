@@ -23,3 +23,11 @@
 @media(max-width:980px){.pet-accessories-page .hero{min-height:680px;background-position:60% center}.pet-accessories-page .hero-copy{max-width:65%;min-height:680px}.pet-accessories-page .grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.hero h1{font-size:46px}.grid,.trust,.checklist{grid-template-columns:1fr}.trust div{text-align:left}.buyer h2{font-size:34px}.home-decor-page .hero{min-height:640px;background-position:68% center}.home-decor-page .hero-copy:before{opacity:.65}.baby-gifts-page .hero{min-height:650px;background-image:linear-gradient(90deg,rgba(31,22,16,.91),rgba(48,33,23,.67) 72%,rgba(71,50,35,.28)),url('/assets/baby-gifts/baby-gifts-hero.webp');background-position:60% center}.baby-gifts-page .hero-copy{min-height:650px}.baby-gifts-page .grid{grid-template-columns:1fr}}
 @media(max-width:580px){.pet-accessories-page .hero{min-height:700px;background-position:69% center}.pet-accessories-page .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,17,11,.22) 0%,rgba(28,17,11,.42) 42%,rgba(28,17,11,.94) 72%,#1c110b 100%)}.pet-accessories-page .hero-copy{max-width:none;min-height:700px;justify-content:flex-end;padding:72px 24px 54px}.pet-accessories-page .hero h1{font-size:clamp(42px,13vw,58px)}.pet-accessories-page .grid{grid-template-columns:1fr}}
+
+/* Product collages with built-in whitespace need a slightly tighter visual crop. */
+.pet-accessories-page .product-visual .primary[src*="full-puff-pet-necklace"],
+.pet-accessories-page .card:hover .product-visual .primary[src*="full-puff-pet-necklace"],
+.pet-accessories-page .product-visual .primary[src*="tulip-pet-necklace"],
+.pet-accessories-page .card:hover .product-visual .primary[src*="tulip-pet-necklace"],
+.pet-accessories-page .product-visual .primary[src*="cartoon-pet-bib"],
+.pet-accessories-page .card:hover .product-visual .primary[src*="cartoon-pet-bib"]{transform:scale(1.32)}
