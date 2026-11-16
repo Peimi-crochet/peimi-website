@@ -31,3 +31,13 @@
 .pet-accessories-page .card:hover .product-visual .primary[src*="tulip-pet-necklace"],
 .pet-accessories-page .product-visual .primary[src*="cartoon-pet-bib"],
 .pet-accessories-page .card:hover .product-visual .primary[src*="cartoon-pet-bib"]{transform:scale(1.32)}
+
+/* Keep every pet product subject visually full and level inside the same square frame. */
+.pet-accessories-page .product-visual .primary,
+.pet-accessories-page .card:hover .product-visual .primary{transform:scale(1.32)}
+.pet-accessories-page .product-visual .primary[src*="fruit-flower-pet-collar"],
+.pet-accessories-page .card:hover .product-visual .primary[src*="fruit-flower-pet-collar"],
+.pet-accessories-page .product-visual .primary[src*="garden-motif-pet-collar"],
+.pet-accessories-page .card:hover .product-visual .primary[src*="garden-motif-pet-collar"],
+.pet-accessories-page .product-visual .primary[src*="puff-flower-pet-collar"],
+.pet-accessories-page .card:hover .product-visual .primary[src*="puff-flower-pet-collar"]{transform:scale(1.5)}
