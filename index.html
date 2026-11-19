@@ -1666,6 +1666,15 @@ document.getElementById('craftVideo').addEventListener('ended',()=>{
       productField.addEventListener('change',syncLeadSource);
     }
 
+    quoteForm.addEventListener('focusin',()=>{
+      syncLeadSource();
+      trackEvent('quote_form_start',{
+        page_path:window.location.pathname,
+        source_category:sourceCategoryField ? sourceCategoryField.value : '',
+        selected_category:productField ? productField.value : ''
+      });
+    },{once:true});
+
     quoteForm.addEventListener('submit',async event=>{
       event.preventDefault();
       syncLeadSource();
